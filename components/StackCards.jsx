@@ -3,18 +3,24 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-/* Cards pin to the top and stack over one another as you scroll — the
-   signature SharpLink "Stack" interaction. Position:sticky does the pinning;
-   the scale/opacity falloff on covered cards is driven here so the stack
-   reads as depth rather than a flat pile. */
-export default function StackCards({ items, className }) {
+/**
+ * Sticky stacking cards component with scroll-driven scale and depth falloff.
+ * On mobile devices, degrades gracefully to a responsive list with distinct gradient ramps.
+ */
+export default function StackCards({ items = [] }) {
   const wrapRef = useRef(null);
   const [progress, setProgress] = useState(() => items.map(() => 0));
 
   useEffect(() => {
     const wrap = wrapRef.current;
     if (!wrap) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
 
     let raf = 0;
     const compute = () => {
@@ -23,7 +29,6 @@ export default function StackCards({ items, className }) {
       const next = cards.map((card) => {
         const rect = card.getBoundingClientRect();
         const pinTop = parseFloat(getComputedStyle(card).top) || 0;
-        /* how far this card has been pushed past its pin point */
         const travelled = pinTop - rect.top;
         if (travelled <= 0) return 0;
         return Math.min(travelled / (rect.height || 1), 1);
@@ -38,7 +43,7 @@ export default function StackCards({ items, className }) {
 
     compute();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
@@ -47,45 +52,64 @@ export default function StackCards({ items, className }) {
   }, [items.length]);
 
   return (
-    <div className={cn("stack", className)} ref={wrapRef}>
+    <div className="relative space-y-6 lg:space-y-0" ref={wrapRef}>
       {items.map((item, i) => {
         const p = progress[i] || 0;
         return (
           <div
-            className="stackItem"
+            className="lg:sticky mb-6 lg:mb-8 transition-all duration-300"
             data-stack-item=""
             key={item.title}
-            style={{ top: `calc(var(--nav-h) + ${24 + i * 14}px)`, zIndex: i + 1 }}
+            style={{
+              top: `calc(var(--nav-h, 76px) + ${24 + i * 14}px)`,
+              zIndex: i + 1,
+            }}
           >
             <div
-              className="stackCard relative group overflow-hidden border border-white/20 shadow-[0_-20px_60px_rgba(0,0,0,0.5)] transition-transform duration-200"
+              className={cn(
+                "relative rounded-xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 border border-line-2 overflow-hidden shadow-2xl shadow-black/50 transition-all duration-300 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-14 items-center min-h-0 lg:min-h-[340px]"
+              )}
               style={{
                 background: gradientFor(i, items.length),
-                transform: `scale(${1 - p * 0.055}) translateY(${p * -8}px)`,
-                opacity: 1 - p * 0.35,
+                transform: `scale(${1 - p * 0.05})`,
+                opacity: 1 - p * 0.3,
               }}
             >
-              {/* Specular top light edge */}
+              {/* Top Specular Edge Glow */}
               <div
                 className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"
                 aria-hidden="true"
               />
 
-              <div className="relative z-10">
-                <span className="sNum font-mono text-[12px] tracking-[0.18em] text-white/70">
+              {/* Subtle ambient lighting inside card */}
+              <div
+                className="absolute inset-0 pointer-events-none opacity-20"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 60% 80% at 88% 20%, rgba(255,255,255,0.25), transparent 60%)",
+                }}
+              />
+
+              <div className="relative z-10 space-y-4 sm:space-y-6">
+                <span className="font-mono text-xs sm:text-sm tracking-[0.18em] text-white/70">
                   {String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
                 </span>
-                <div className="sRule my-5 h-[1px] bg-white/20" />
-                <span className="sKick font-mono text-[11px] uppercase tracking-[0.18em] text-white/80 mb-4 block">
-                  {item.kicker}
-                </span>
-                <h3 className="text-[clamp(24px,3.2vw,42px)] font-display font-medium tracking-tight text-white">
-                  {item.title}
-                </h3>
+                <div className="h-[1px] bg-white/20 w-full" />
+                <div>
+                  <span className="font-mono text-xs tracking-[0.18em] uppercase text-white/80 block mb-2 font-medium">
+                    {item.kicker}
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-white leading-tight">
+                    {item.title}
+                  </h3>
+                </div>
               </div>
-              <p className="relative z-10 text-[clamp(14.5px,1.4vw,16.5px)] leading-[1.65] text-white/85">
-                {item.body}
-              </p>
+
+              <div className="relative z-10">
+                <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-white/85">
+                  {item.body}
+                </p>
+              </div>
             </div>
           </div>
         );
@@ -94,8 +118,6 @@ export default function StackCards({ items, className }) {
   );
 }
 
-/* Walk the palette from electric indigo through violet to orchid
-   as the stack deepens. */
 function gradientFor(i, total) {
   const stops = [
     ["#4500F9", "#2A0796"],
@@ -107,5 +129,3 @@ function gradientFor(i, total) {
   const [a, b] = stops[Math.min(i, stops.length - 1)];
   return `linear-gradient(150deg, ${a} 0%, ${b} 100%)`;
 }
-
-

@@ -148,18 +148,14 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ============ STACK (sticky) ============ */}
-      <section className="sec">
+      {/* ============ PROPOSITIONS (STICKY STACK) ============ */}
+      <section className="py-20 sm:py-28 lg:py-36 relative z-10 bg-ink-2/40 border-y border-line">
         <Container>
-          <Reveal className="head" style={{ marginBottom: 56 }}>
-            <Badge variant="kicker-active">Propositions</Badge>
-            <h2 className="dispXl">The Stack for Scaling Compute</h2>
-            <p className="lead">
-              Five layers that turn powered land into contracted, revenue-generating AI compute.
-            </p>
-          </Reveal>
-        </Container>
-        <Container>
+          <SectionHeader
+            kicker="Propositions"
+            title="The Stack for Scaling Compute"
+            subtitle="Five layers that turn powered land into contracted, revenue-generating AI compute."
+          />
           <StackCards items={STACK} />
         </Container>
       </section>

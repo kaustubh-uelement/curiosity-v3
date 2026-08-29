@@ -3,18 +3,20 @@ import TextLink from "./TextLink";
 import { cn } from "@/lib/utils";
 
 /**
- * Standardized Section Header component with optional kicker, title, lead text, and action link.
+ * Standardized Section Header component with optional kicker, title, lead/subtitle text, and action link.
  */
 export default function SectionHeader({
   kicker,
   title,
   lead,
+  subtitle,
   action,
   size = "xl",
   className,
   headerClassName,
 }) {
   const titleClass = size === "xl" ? "dispXl" : size === "lg" ? "dispLg" : "dispMd";
+  const description = subtitle || lead;
 
   const headerContent = (
     <div className={cn("head", headerClassName)}>
@@ -24,7 +26,7 @@ export default function SectionHeader({
       ) : (
         title
       )}
-      {lead && <p className="lead">{lead}</p>}
+      {description && <p className="lead">{description}</p>}
     </div>
   );
 
@@ -45,3 +47,4 @@ export default function SectionHeader({
     </div>
   );
 }
+
