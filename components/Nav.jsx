@@ -55,17 +55,17 @@ export default function Nav() {
           open && "menuOpen"
         )}
       >
-        <div className="navIn">
+        <div className="navIn flex items-center justify-between gap-4 flex-nowrap w-full">
           <Link
-            className="logo group transition-transform duration-300 hover:scale-[1.02] flex items-center"
+            className="logo group transition-transform duration-300 hover:scale-[1.02] flex items-center flex-shrink-0 whitespace-nowrap"
             href="/"
             aria-label="Curiosity AI, Home"
           >
             <Logo variant="full" priority className="h-6 sm:h-6 w-auto" />
           </Link>
 
-          {/* Desktop inline navigation over frosted glass */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.08] border border-white/[0.16] p-1.5 rounded-r-pill backdrop-blur-md">
+          {/* Desktop inline navigation over frosted glass - visible on large/xl screens only where there is ample room */}
+          <nav className="hidden xl:flex items-center gap-1 bg-white/[0.08] border border-white/[0.16] p-1.5 rounded-r-pill backdrop-blur-md flex-shrink-0 flex-nowrap whitespace-nowrap">
             {desktopNavItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -73,7 +73,7 @@ export default function Nav() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "px-4 py-1.5 rounded-r-pill text-[13.5px] font-medium transition-all duration-300",
+                    "px-3.5 py-1.5 rounded-r-pill text-[13.5px] font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0",
                     isActive
                       ? "bg-white/[0.18] text-white shadow-sm font-semibold"
                       : "text-white/90 hover:text-white hover:bg-white/[0.12]"
@@ -85,17 +85,18 @@ export default function Nav() {
             })}
           </nav>
 
-          <div className="navRight">
+          <div className="navRight flex items-center gap-3 flex-shrink-0 flex-nowrap whitespace-nowrap">
             <Button
               href="/contact"
               variant="primary"
               size="sm"
-              className="hidden sm:inline-flex shadow-sm hover:shadow-[0_0_20px_rgba(205,130,255,0.3)]"
+              className="hidden sm:inline-flex shadow-sm hover:shadow-[0_0_20px_rgba(205,130,255,0.3)] whitespace-nowrap flex-shrink-0"
             >
               Deploy with Curiosity
             </Button>
+            {/* Hamburger menu button - only appears when middle menu is hidden on smaller/medium screens */}
             <button
-              className="menuBtn group transition-all duration-300 hover:border-white text-white border-white/20 bg-white/[0.08] backdrop-blur-md"
+              className="menuBtn xl:hidden group transition-all duration-300 hover:border-white text-white border-white/20 bg-white/[0.08] backdrop-blur-md whitespace-nowrap flex-shrink-0"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="site-menu"
@@ -113,6 +114,7 @@ export default function Nav() {
           </div>
         </div>
       </header>
+
 
 
       {/* Fullscreen interactive overlay */}

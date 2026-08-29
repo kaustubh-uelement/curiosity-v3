@@ -32,11 +32,12 @@ export default function Button({
   const variantClass = variantMap[variant] || variantMap.primary;
   const sizeClass = sizeMap[size] || sizeMap.md;
   const combinedClassName = cn(
-    "btn relative inline-flex items-center justify-center gap-2.5 rounded-r-pill font-medium tracking-tight cursor-pointer overflow-hidden transition-all duration-300 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-orchid focus-visible:outline-offset-2",
+    "btn relative inline-flex items-center justify-center gap-2.5 rounded-r-pill font-medium tracking-tight cursor-pointer overflow-hidden whitespace-nowrap flex-shrink-0 transition-all duration-300 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-orchid focus-visible:outline-offset-2",
     variantClass,
     sizeClass,
     className
   );
+
 
   const innerContent = (
     <>
