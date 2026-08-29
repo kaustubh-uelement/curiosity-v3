@@ -56,10 +56,10 @@ export default function Home() {
           <div className="heroRow">
             <div>
               <div className="badgeRow">
-                <Badge variant="kicker">Deploying across</Badge>
-                <Badge variant="default">Mumbai</Badge>
-                <Badge variant="default">Chennai</Badge>
-                <Badge variant="default">NVIDIA · AMD</Badge>
+                <Badge variant="kicker" className="!text-white font-medium">Deploying across</Badge>
+                <Badge variant="default" className="!text-white font-medium">Mumbai</Badge>
+                <Badge variant="default" className="!text-white font-medium">Chennai</Badge>
+                <Badge variant="default" className="!text-white font-medium">NVIDIA · AMD</Badge>
               </div>
               <div className="btns heroBtns">
                 <Button href="/platform" variant="primary">
@@ -72,12 +72,14 @@ export default function Home() {
             </div>
 
             <div className="heroSub">
-              <p className="lead">{SITE.intro}</p>
+              <p className="lead text-white font-normal leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                {SITE.intro}
+              </p>
             </div>
           </div>
 
           <Reveal
-            className="annc group relative overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(205,130,255,0.15)] hover:border-line-2"
+            className="annc group relative overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(205,130,255,0.15)] hover:border-line-2 bg-black/40 border-white/20 backdrop-blur-md"
             as={Link}
             href={ANNOUNCEMENT.href}
             style={{ marginTop: 40 }}
@@ -91,19 +93,20 @@ export default function Home() {
               <span className="k font-mono text-[10.5px] tracking-[0.16em] uppercase text-orchid font-semibold">
                 {ANNOUNCEMENT.kicker}
               </span>
-              <span className="d font-mono text-[11px] text-tx-3">
+              <span className="d font-mono text-[11px] text-white/80">
                 {ANNOUNCEMENT.date}
               </span>
             </span>
-            <span className="t flex-1 min-w-[200px] text-[15px] leading-snug text-white/95 group-hover:text-white transition-colors">
+            <span className="t flex-1 min-w-[200px] text-[15px] leading-snug text-white font-medium">
               {ANNOUNCEMENT.title}
             </span>
-            <span className="arw flex-none text-tx-3 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:text-white" aria-hidden="true">
+            <span className="arw flex-none text-white/80 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:text-white" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M4 9h10M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" strokeWidth="1.4" />
               </svg>
             </span>
           </Reveal>
+
         </Container>
       </header>
 

@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="footGrid" style={{ paddingTop: 44 }}>
           <div className="footBrand">
             <Link className="logo group transition-opacity hover:opacity-90 inline-flex items-center" href="/" aria-label="Curiosity AI, Home">
-              <Logo variant="blue" className="h-6 w-auto" />
+              <Logo variant="full" className="h-6 w-auto" />
             </Link>
             <p>{SITE.tagline}</p>
           </div>

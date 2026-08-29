@@ -64,8 +64,8 @@ export default function Nav() {
             <Logo variant="full" priority className="h-6 sm:h-6 w-auto" />
           </Link>
 
-          {/* Desktop inline navigation - completely transparent in hero */}
-          <nav className="hidden lg:flex items-center gap-1 p-1.5 rounded-r-pill">
+          {/* Desktop inline navigation */}
+          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] p-1.5 rounded-r-pill backdrop-blur-md">
             {desktopNavItems.map((item) => {
               const isActive = pathname === item.href;
               return (
