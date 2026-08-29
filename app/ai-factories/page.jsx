@@ -17,7 +17,7 @@ const MODEL = [
   {
     kicker: "Capital",
     title: "Investment and co-investment",
-    body: "Curiosity AI builds, invests and co-invests in GPU and supporting AI compute infrastructure — so partners never carry the full capital load of a megawatt-scale buildout alone.",
+    body: "Curiosity AI builds, invests and co-invests in GPU and supporting AI compute infrastructure, so partners never carry the full capital load of a megawatt-scale buildout alone.",
   },
   {
     kicker: "Hardware",
@@ -32,7 +32,7 @@ const MODEL = [
   {
     kicker: "Demand",
     title: "Contracted offtake",
-    body: "Long-term offtakers in the U.S. and India — institutionally backed neo-clouds and enterprises — convert deployed capacity into contracted revenue.",
+    body: "Long-term offtakers in the U.S. and India, including institutionally backed neo-clouds and enterprises, convert deployed capacity into contracted revenue.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function AiFactories() {
       <PageHero
         kicker="AI Factories"
         title="Partnering with India's largest AI-ready data centres."
-        lead="Curiosity AI partners with AI Factories and AI Data Centres that hold the power, land, capital and institutional capability to deploy 5MW to 100MW+ facilities — then brings the GPUs, capital and deployment expertise."
+        lead="Curiosity AI partners with AI Factories and AI Data Centres that hold the power, land, capital and institutional capability to deploy 5MW to 100MW+ facilities, then brings the GPUs, capital and deployment expertise."
       />
 
       <section className="secSm">

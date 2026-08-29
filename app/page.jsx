@@ -164,7 +164,7 @@ export default function Home() {
       <Statement
         title="Compute AI Infrastructure Platform for"
         highlight="Abundant Intelligence."
-        body="Not another GPU cloud — the platform that brings megawatt-scale capacity online in the first place."
+        body="Not another GPU cloud: the platform that brings megawatt-scale capacity online in the first place."
         primary={{ href: "/platform", label: "Explore the platform" }}
         secondary={{ href: "/infrastructure", label: "See the roadmap" }}
       />

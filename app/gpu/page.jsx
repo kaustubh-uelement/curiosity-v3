@@ -27,7 +27,7 @@ export default function Gpu() {
       <PageHero
         kicker="GPU Infrastructure"
         title="Engines of abundant intelligence."
-        lead="Curiosity AI deploys the latest generation of NVIDIA and AMD GPUs across AI Factories — for training workloads, inference, frontier AI modelling, generative AI and high-performance computing."
+        lead="Curiosity AI deploys the latest generation of NVIDIA and AMD GPUs across AI Factories for training workloads, inference, frontier AI modelling, generative AI and high-performance computing."
       />
 
       <section className="secSm">
@@ -70,7 +70,7 @@ export default function Gpu() {
           <SectionHeader
             kicker="Phase 1 configuration"
             title="5MW. Four clusters. One deployment."
-            lead="The opening deployment is four SuperPOD clusters of NVIDIA Blackwell B300 GPUs — 2,304 GPUs in total — installed in a partner AI Factory on a five-year colocation model."
+            lead="The opening deployment is four SuperPOD clusters of NVIDIA Blackwell B300 GPUs (2,304 GPUs in total), installed in a partner AI Factory on a five-year colocation model."
             size="lg"
             headerClassName="mb-12"
           />

@@ -10,14 +10,14 @@ import { MARKET, SEGMENTS } from "@/lib/content";
 export const metadata = {
   title: "For Neo-Clouds & Enterprise",
   description:
-    "Long-term GPU capacity for neo-clouds and enterprise AI — GPUaaS and bare metal, 3-5 year reservations, access to 5MW-100MW+ AI Factory infrastructure.",
+    "Long-term GPU capacity for neo-clouds and enterprise AI: GPUaaS and bare metal, 3-5 year reservations, access to 5MW-100MW+ AI Factory infrastructure.",
 };
 
 const BENEFITS = [
   {
     n: "01",
     h: "Reserve long-term",
-    p: "Reserve GPU-as-a-Service capacity for 3 to 5 year periods — predictable access, not spot availability.",
+    p: "Reserve GPU-as-a-Service capacity for 3 to 5 year periods: predictable access, not spot availability.",
   },
   {
     n: "02",
@@ -74,14 +74,14 @@ export default function Customers() {
               hoverable
               tag="Managed"
               title="GPU-as-a-Service"
-              description="Reserved, sovereign GPU capacity delivered as a managed service — sized to training and inference workloads, without operating the hardware directly."
+              description="Reserved, sovereign GPU capacity delivered as a managed service, sized to training and inference workloads without operating the hardware directly."
               specs={["3–5yr terms", "Training", "Inference", "Managed"]}
             />
             <Card
               hoverable
               tag="Dedicated"
               title="Bare metal"
-              description="Dedicated, single-tenant GPU clusters for customers who need direct control of the stack — from firmware through orchestration."
+              description="Dedicated, single-tenant GPU clusters for customers who need direct control of the stack, from firmware through orchestration."
               specs={["3–5yr terms", "Single-tenant", "Frontier AI", "Sovereign AI"]}
             />
           </Reveal>
@@ -111,7 +111,7 @@ export default function Customers() {
           <SectionHeader
             kicker="Market context"
             title="Large-scale customers need gigawatts to come online."
-            lead="Global neo-clouds are scaling contracted backlog far faster than deployed capacity — the gap Curiosity AI is built to help close in India."
+            lead="Global neo-clouds are scaling contracted backlog far faster than deployed capacity, the gap Curiosity AI is built to help close in India."
             headerClassName="mb-12"
           />
           <Reveal className="g4">
@@ -131,7 +131,7 @@ export default function Customers() {
       <Statement
         title="Reserve dedicated"
         highlight="compute capacity."
-        body="Tell us your workload and timeline — training, inference or sovereign AI — and we'll size the right capacity."
+        body="Tell us your workload and timeline (training, inference or sovereign AI), and we'll size the right capacity."
         primary={{ href: "/contact", label: "Talk to us" }}
         secondary={{ href: "/gpu", label: "See GPU specifications" }}
       />

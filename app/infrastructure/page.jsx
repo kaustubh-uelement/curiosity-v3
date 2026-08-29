@@ -22,7 +22,7 @@ const WHY = [
   {
     n: "02",
     h: "Co-investment",
-    p: "Curiosity AI invests and co-invests in the GPU and supporting compute infrastructure — partners don't finance the buildout alone.",
+    p: "Curiosity AI invests and co-invests in the GPU and supporting compute infrastructure; partners don't finance the buildout alone.",
   },
   {
     n: "03",
@@ -43,7 +43,7 @@ export default function Infrastructure() {
       <PageHero
         kicker="AI Compute Infrastructure"
         title="5MW to 100MW+, brought online in phases."
-        lead="Capacity scales in step with contracted demand — each phase deploying on AI Factory partner sites already under development across Mumbai and Chennai."
+        lead="Capacity scales in step with contracted demand, with each phase deploying on AI Factory partner sites already under development across Mumbai and Chennai."
       />
 
       <section className="secSm">
@@ -83,7 +83,7 @@ export default function Infrastructure() {
           <SectionHeader
             kicker="Speed to market"
             title="Already partnered. Ready to deploy."
-            lead="Curiosity AI has partnered with leading AI Factories and AI Data Centres in India that are building large-scale facilities — giving the platform the ability to move quickly from demand to deployment."
+            lead="Curiosity AI has partnered with leading AI Factories and AI Data Centres in India that are building large-scale facilities, giving the platform the ability to move quickly from demand to deployment."
             size="lg"
             headerClassName="mb-14"
           />

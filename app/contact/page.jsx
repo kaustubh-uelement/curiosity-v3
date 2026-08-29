@@ -8,7 +8,7 @@ import { SITE } from "@/lib/content";
 export const metadata = {
   title: "Contact",
   description:
-    "Deploy with Curiosity — get in touch as an AI Factory partner, a neo-cloud or enterprise customer, or an investor.",
+    "Deploy with Curiosity: get in touch as an AI Factory partner, a neo-cloud or enterprise customer, or an investor.",
 };
 
 const ROUTES = [
@@ -38,7 +38,7 @@ export default function Contact() {
       <PageHero
         kicker="Contact"
         title="Deploy with Curiosity."
-        lead="Tell us whether you're bringing land and power, or looking for long-term GPU capacity — we'll route you to the right team."
+        lead="Tell us whether you're bringing land and power, or looking for long-term GPU capacity; we'll route you to the right team."
       />
 
       <section className="secSm">

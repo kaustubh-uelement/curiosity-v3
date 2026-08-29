@@ -27,13 +27,13 @@ const fontMono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL("https://curiosityai.in"),
   title: {
-    default: "Curiosity AI — Compute AI Infrastructure Platform for Abundant Intelligence",
-    template: "%s — Curiosity AI",
+    default: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
+    template: "%s | Curiosity AI",
   },
   description:
     "Curiosity AI is a full-stack compute AI infrastructure platform bringing 5MW to 100MW+ of AI Factory capacity online for large-scale neo-clouds and enterprise AI.",
   openGraph: {
-    title: "Curiosity AI — Compute AI Infrastructure Platform for Abundant Intelligence",
+    title: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
     description:
       "Bringing 5MW to 100MW+ of AI compute infrastructure online with AI Factories across India.",
     type: "website",

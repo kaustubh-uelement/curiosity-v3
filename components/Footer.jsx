@@ -14,7 +14,7 @@ export default function Footer() {
 
         <div className="footGrid" style={{ paddingTop: 44 }}>
           <div className="footBrand">
-            <Link className="logo" href="/" aria-label="Curiosity AI — Home">
+            <Link className="logo" href="/" aria-label="Curiosity AI, Home">
               <Logo />
               <span>Curiosity AI</span>
             </Link>

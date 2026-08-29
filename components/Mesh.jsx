@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Animated gradient mesh — stands in for SharpLink's looping hero video,
- * but renders as pure CSS so there is no media payload to ship.
+ * Animated gradient mesh: creates ambient lighting and drifting color orbs
+ * across the background.
  */
 export default function Mesh({ className }) {
   return (

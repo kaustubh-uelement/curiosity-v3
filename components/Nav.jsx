@@ -59,7 +59,7 @@ export default function Nav() {
           <Link
             className="logo group transition-transform duration-300 hover:scale-[1.02]"
             href="/"
-            aria-label="Curiosity AI — Home"
+            aria-label="Curiosity AI, Home"
           >
             <Logo className="transition-transform duration-300 group-hover:rotate-12" />
             <span className="font-display font-semibold tracking-tight text-[17px] text-white">

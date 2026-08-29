@@ -15,7 +15,7 @@ export const metadata = {
 
 const STATS = [
   { v: "2026", label: "Founded" },
-  { n: 2, label: "First deployment markets — Mumbai & Chennai" },
+  { n: 2, label: "First deployment markets: Mumbai & Chennai" },
   { n: 6, label: "AI Factory & data centre partners" },
   { v: "100", unit: "MW+", label: "Target capacity by 2029" },
 ];
@@ -34,7 +34,7 @@ const PILLARS = [
   {
     n: "03",
     h: "Execution at scale",
-    p: "Experience turning capital and partnerships into operating physical infrastructure — 25.7 million rides, 100MW of solar, nationwide charging.",
+    p: "Experience turning capital and partnerships into operating physical infrastructure: 25.7 million rides, 100MW of solar, nationwide charging.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function Company() {
       <PageHero
         kicker="Company"
         title="Building the infrastructure backbone for abundant intelligence."
-        lead="Curiosity AI exists to close the gap between AI compute demand and AI compute supply — by partnering with AI Factories, not competing to become one more GPU reseller."
+        lead="Curiosity AI exists to close the gap between AI compute demand and AI compute supply by partnering with AI Factories, not competing to become one more GPU reseller."
       />
 
       <section className="secSm">
@@ -84,15 +84,15 @@ export default function Company() {
               <p className="lead" style={{ marginBottom: 18 }}>
                 Punit is a serial entrepreneur in clean energy and electric mobility infrastructure,
                 having raised and invested $300M in solar power plants, electric mobility and solar
-                panel manufacturing between 2008 and 2025 — building a 100MW portfolio of solar power
+                panel manufacturing between 2008 and 2025, building a 100MW portfolio of solar power
                 projects along the way.
               </p>
               <p className="lead" style={{ marginBottom: 18 }}>
                 In 2018 he co-founded BluSmart Mobility to decarbonise mobility in India. BluSmart
                 raised $150M in equity from BP Ventures, Mayfield Fund, Green Frontier Capital and
                 Panthera Capital, operated India&apos;s largest integrated EV ride-hailing service and
-                charging superhub infrastructure, and achieved $100M ARR ($90M revenue) in FY 2024–25
-                — delivering 25.7 million rides at a 4.9/5 customer rating.
+                charging superhub infrastructure, and achieved $100M ARR ($90M revenue) in FY 2024–25,
+                delivering 25.7 million rides at a 4.9/5 customer rating.
               </p>
               <p className="lead">
                 For his contributions to clean mobility and clean energy infrastructure, Punit was
@@ -131,7 +131,7 @@ export default function Company() {
       <Statement
         title="Partner with"
         highlight="Curiosity AI."
-        body="Whether you're an AI Factory operator, a neo-cloud, or an enterprise scaling AI — let's talk."
+        body="Whether you're an AI Factory operator, a neo-cloud, or an enterprise scaling AI, let's talk."
         primary={{ href: "/contact", label: "Deploy with Curiosity" }}
         secondary={{ href: "/platform", label: "Explore the platform" }}
       />

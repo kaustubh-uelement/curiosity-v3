@@ -49,11 +49,10 @@ export default function Newsletter() {
           {state === "error"
             ? "Please enter a valid email address."
             : state === "done"
-            ? "Thanks — we'll be in touch as capacity comes online."
-            : "Deployment milestones and capacity announcements. No noise."}
+            ? "Thanks! We'll be in touch as capacity comes online."
+            : "Stay updated on cluster additions, site launches and GPU availability."}
         </p>
       </div>
     </div>
   );
 }
-

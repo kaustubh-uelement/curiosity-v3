@@ -18,17 +18,17 @@ const AUDIENCES = [
   {
     n: "01",
     h: "For AI Factory partners",
-    p: "Access to capital, GPUs and deployment expertise — turning available power, land and capacity into a revenue-generating AI Factory designed for scale.",
+    p: "Access to capital, GPUs and deployment expertise, turning available power, land and capacity into a revenue-generating AI Factory designed for scale.",
   },
   {
     n: "02",
     h: "For neo-clouds & enterprises",
-    p: "Reserve long-term GPUaaS capacity with access to world-class AI Factories from 5MW to 100MW+ — without building or financing infrastructure yourself.",
+    p: "Reserve long-term GPUaaS capacity with access to world-class AI Factories from 5MW to 100MW+, without building or financing infrastructure yourself.",
   },
   {
     n: "03",
     h: "For the platform",
-    p: "One coordinated view across power, compute and delivery — so capacity moves from contract to production without hand-offs between disconnected vendors.",
+    p: "One coordinated view across power, compute and delivery, so capacity moves from contract to production without hand-offs between disconnected vendors.",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function Platform() {
       <PageHero
         kicker="The Platform"
         title="A full-stack AI compute infrastructure platform."
-        lead="Curiosity AI brings together everything an AI Factory needs — land, power, capital, GPUs and the infrastructure around them — and converts it into contracted compute capacity."
+        lead="Curiosity AI brings together everything an AI Factory needs: land, power, capital, GPUs and supporting infrastructure, converting it into contracted compute capacity."
       />
 
       <section className="secSm">
@@ -54,7 +54,7 @@ export default function Platform() {
           <SectionHeader
             kicker="Business model"
             title="From demand to deployment."
-            lead="Curiosity AI sits between AI Factory partners and large-scale compute demand — investing in the infrastructure and coordinating its delivery."
+            lead="Curiosity AI sits between AI Factory partners and large-scale compute demand, investing in the infrastructure and coordinating its delivery."
             headerClassName="mb-14"
           />
           <StackCards items={STACK} />
