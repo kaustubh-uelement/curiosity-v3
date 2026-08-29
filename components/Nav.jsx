@@ -57,14 +57,11 @@ export default function Nav() {
       >
         <div className="navIn">
           <Link
-            className="logo group transition-transform duration-300 hover:scale-[1.02]"
+            className="logo group transition-transform duration-300 hover:scale-[1.02] flex items-center"
             href="/"
             aria-label="Curiosity AI, Home"
           >
-            <Logo className="transition-transform duration-300 group-hover:rotate-12" />
-            <span className="font-display font-semibold tracking-tight text-[17px] text-white">
-              Curiosity AI
-            </span>
+            <Logo variant="full" priority className="h-6 sm:h-7 w-auto" />
           </Link>
 
           {/* Desktop inline navigation */}

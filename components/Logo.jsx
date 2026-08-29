@@ -1,30 +1,45 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
- * Curiosity AI brand SVG logo mark.
+ * Curiosity AI Brand Logo Component
+ * - variant="full" (default): White horizontal brand wordmark logo (curiosity-ai-white-logo.png)
+ * - variant="icon": Square favicon / app icon mark (curiosity-ai-icon.png)
  */
-export default function Logo({ size = 26, className }) {
-  return (
-    <svg
-      className={cn("logoMark flex-none", className)}
-      width={size}
-      height={size}
-      viewBox="0 0 32 32"
-      fill="none"
-      aria-hidden="true"
-    >
-      <defs>
-        <linearGradient id="curiosityLogo" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#CD82FF" />
-          <stop offset="0.5" stopColor="#8752FA" />
-          <stop offset="1" stopColor="#4500F9" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M16 1.5 L19.8 12.2 L30.5 16 L19.8 19.8 L16 30.5 L12.2 19.8 L1.5 16 L12.2 12.2 Z"
-        fill="url(#curiosityLogo)"
+export default function Logo({
+  variant = "full",
+  className,
+  priority = false,
+  width,
+  height,
+}) {
+  if (variant === "icon") {
+    const size = width || height || 28;
+    return (
+      <Image
+        src="/curiosity-ai-icon.png"
+        alt="Curiosity AI Icon"
+        width={size}
+        height={size}
+        priority={priority}
+        className={cn("logoMark flex-none object-contain", className)}
       />
-    </svg>
+    );
+  }
+
+  // Full white brand logo (3400 x 400 aspect ratio)
+  const defaultWidth = width || 175;
+  const defaultHeight = height || 21;
+
+  return (
+    <Image
+      src="/curiosity-ai-white-logo.png"
+      alt="Curiosity AI"
+      width={defaultWidth}
+      height={defaultHeight}
+      priority={priority}
+      className={cn("h-6 sm:h-7 w-auto object-contain flex-none", className)}
+    />
   );
 }
 

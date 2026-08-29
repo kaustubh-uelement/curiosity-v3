@@ -32,6 +32,36 @@ export const metadata = {
   },
   description:
     "Curiosity AI is a full-stack compute AI infrastructure platform bringing 5MW to 100MW+ of AI Factory capacity online for large-scale neo-clouds and enterprise AI.",
+  applicationName: "Curiosity AI",
+  authors: [{ name: "Curiosity AI", url: "https://curiosityai.in" }],
+  creator: "Curiosity AI",
+  publisher: "Curiosity AI",
+  keywords: [
+    "Curiosity AI",
+    "AI Compute",
+    "AI Infrastructure",
+    "NVIDIA Blackwell B300",
+    "NVIDIA GB300",
+    "AMD Instinct MI400",
+    "AI Factories",
+    "GPUaaS",
+    "Bare Metal GPU",
+    "India AI Data Centres",
+    "Megawatt AI Scale",
+    "Abundant Intelligence",
+  ],
+  icons: {
+    icon: [
+      { url: "/curiosity-ai-icon.png", type: "image/png" },
+      { url: "/curiosity-ai-icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/curiosity-ai-icon.png", sizes: "192x192", type: "image/png" },
+      { url: "/curiosity-ai-icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: ["/curiosity-ai-icon.png"],
+    apple: [
+      { url: "/curiosity-ai-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
     description:
@@ -40,10 +70,35 @@ export const metadata = {
     locale: "en_US",
     url: "https://curiosityai.in",
     siteName: "Curiosity AI",
+    images: [
+      {
+        url: "/curiosity-og-image.png",
+        width: 1894,
+        height: 826,
+        alt: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
+    description:
+      "Bringing 5MW to 100MW+ of AI compute infrastructure online with AI Factories across India.",
+    images: ["/curiosity-og-image.png"],
+  },
+  alternates: {
+    canonical: "https://curiosityai.in",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
