@@ -61,7 +61,7 @@ export default function Nav() {
             href="/"
             aria-label="Curiosity AI, Home"
           >
-            <Logo variant="full" priority className="h-6 sm:h-7 w-auto" />
+            <Logo variant="full" priority className="h-6 sm:h-6 w-auto" />
           </Link>
 
           {/* Desktop inline navigation */}

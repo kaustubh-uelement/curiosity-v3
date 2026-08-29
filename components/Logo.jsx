@@ -3,7 +3,8 @@ import { cn } from "@/lib/utils";
 
 /**
  * Curiosity AI Brand Logo Component
- * - variant="full" (default): White horizontal brand wordmark logo (curiosity-ai-white-logo.png)
+ * - variant="full" | "white" (default): White horizontal brand wordmark logo (curiosity-ai-white-logo.png)
+ * - variant="blue": Electric blue horizontal brand wordmark logo (curiosity-ai-blue-logo.png)
  * - variant="icon": Square favicon / app icon mark (curiosity-ai-icon.png)
  */
 export default function Logo({
@@ -27,10 +28,23 @@ export default function Logo({
     );
   }
 
-  // Full white brand logo (3400 x 400 aspect ratio)
   const defaultWidth = width || 175;
   const defaultHeight = height || 21;
 
+  if (variant === "blue") {
+    return (
+      <Image
+        src="/curiosity-ai-blue-logo.png"
+        alt="Curiosity AI"
+        width={defaultWidth}
+        height={defaultHeight}
+        priority={priority}
+        className={cn("h-6 sm:h-7 w-auto object-contain flex-none", className)}
+      />
+    );
+  }
+
+  // Full white brand logo (3400 x 400 aspect ratio)
   return (
     <Image
       src="/curiosity-ai-white-logo.png"
