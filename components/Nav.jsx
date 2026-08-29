@@ -13,9 +13,9 @@ export default function Nav() {
   const [stuck, setStuck] = useState(false);
   const pathname = usePathname();
 
-  /* Solidify the bar once scrolled past the fold edge */
+  /* Solidify the bar once scrolled past the hero top */
   useEffect(() => {
-    const onScroll = () => setStuck(window.scrollY > 20);
+    const onScroll = () => setStuck(window.scrollY > 180);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

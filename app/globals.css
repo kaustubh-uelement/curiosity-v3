@@ -286,7 +286,10 @@
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  transition: background .4s var(--ease);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background .4s var(--ease), backdrop-filter .4s var(--ease), -webkit-backdrop-filter .4s var(--ease);
   border-bottom: none;
 }
 .nav.stuck {
@@ -295,6 +298,7 @@
   -webkit-backdrop-filter: var(--blur);
   border-bottom: none;
 }
+
 .navIn {
   width: 100%;
   max-width: 1320px;
@@ -453,6 +457,126 @@
   padding: calc(var(--nav-h) + 60px) 0 48px;
   overflow: hidden;
 }
+
+/* ==========================================================================
+   CODEPEN SKY ANIMATION (Funky 5000-star galaxy rotation)
+   Gradient: Lavender -> Blue -> Blackish Blue -> Black (top to bottom)
+   ========================================================================== */
+.skyWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  /* Gradient: pink (top) → lavender → dark blue → black (bottom) */
+  background: linear-gradient(
+    180deg,
+    #f472b6 0%,
+    #c084fc 16%,
+    #818cf8 30%,
+    #3730a3 50%,
+    #0f172a 70%,
+    #050508 100%
+  );
+}
+
+.sky {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  animation: rotateSky 180s linear infinite;
+  animation-play-state: running !important;
+  will-change: transform;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.star {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@keyframes rotateSky {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skyFade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 6, 17, 0) 0%,
+    rgba(10, 6, 17, 0.0) 40%,
+    rgba(10, 6, 17, 0.5) 80%,
+    var(--ink) 100%
+  );
+}
+
+/* ==========================================================================
+   HERO MOUNTAIN — overlaps rotating stars, sits under hero text
+   ========================================================================== */
+.heroMountain {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.heroMountainInner {
+  position: absolute;
+  inset: 0;
+}
+
+/* Mountain image positioned from the top so the peak is never cut */
+.heroMountainImg {
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.82) contrast(1.05) saturate(0.92);
+}
+
+/* Gentle dark tint applied ONLY on the mountain silhouette matching image position */
+.heroMountainDarkMask {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 6, 17, 0) 0%,
+    rgba(10, 6, 17, 0.20) 40%,
+    rgba(10, 6, 17, 0.42) 75%,
+    rgba(10, 6, 17, 0.62) 100%
+  );
+  -webkit-mask-image: url('/mountain.webp');
+  mask-image: url('/mountain.webp');
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center top;
+  mask-position: center top;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+
+
+
+
 .mesh {
   position: absolute;
   inset: 0;
@@ -513,7 +637,7 @@
 }
 .heroIn {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   width: 100%;
 }
 .heroTop {
@@ -521,7 +645,10 @@
 }
 .heroH {
   max-width: 14ch;
+  text-align: right;
+  margin-left: auto;
 }
+
 .heroRow {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -530,11 +657,18 @@
   margin-top: clamp(28px, 4vw, 48px);
 }
 .heroSub {
-  max-width: 440px;
+  max-width: 460px;
+}
+.heroSub .lead,
+.heroSub p {
+  color: #FFFFFF !important;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 .heroBtns {
   margin-top: 30px;
 }
+
 .badgeRow {
   display: flex;
   align-items: center;
@@ -544,7 +678,21 @@
 }
 .badgeRow .kicker {
   margin: 0;
+  color: #FFFFFF !important;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  opacity: 1 !important;
 }
+.badgeRow .badge {
+  color: #FFFFFF !important;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -561,6 +709,7 @@
   text-transform: uppercase;
   color: var(--tx-2);
 }
+
 
 /* announcement card */
 .annc {
@@ -1473,20 +1622,7 @@
   display: block;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
-  }
-  .stackItem {
-    position: relative;
-    top: auto;
-  }
-  .overlay {
-    transition: none;
-  }
-}
+/* prefers-reduced-motion intentionally NOT applied globally — animations are core to the design */
 
 /* ==========================================================================
    RESPONSIVE
