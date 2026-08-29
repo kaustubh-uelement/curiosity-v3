@@ -286,14 +286,14 @@
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  transition: background .4s var(--ease), border-color .4s var(--ease);
-  border-bottom: 1px solid transparent;
+  transition: background .4s var(--ease);
+  border-bottom: none;
 }
 .nav.stuck {
   background: rgba(10, 6, 17, 0.78);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
-  border-bottom-color: var(--line);
+  border-bottom: none;
 }
 .navIn {
   width: 100%;
