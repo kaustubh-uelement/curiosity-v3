@@ -338,13 +338,18 @@
   text-transform: uppercase;
   padding: 11px 20px;
   border-radius: var(--r-pill);
-  border: 1px solid var(--line-2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: border-color .3s var(--ease), background .3s var(--ease);
 }
 .menuBtn:hover {
-  border-color: var(--tx);
-  background: var(--glass);
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.14);
 }
+
 .menuBars {
   display: flex;
   flex-direction: column;

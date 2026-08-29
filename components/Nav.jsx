@@ -64,8 +64,8 @@ export default function Nav() {
             <Logo variant="full" priority className="h-6 sm:h-6 w-auto" />
           </Link>
 
-          {/* Desktop inline navigation */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] p-1.5 rounded-r-pill backdrop-blur-md">
+          {/* Desktop inline navigation over frosted glass */}
+          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.08] border border-white/[0.16] p-1.5 rounded-r-pill backdrop-blur-md">
             {desktopNavItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -75,8 +75,8 @@ export default function Nav() {
                   className={cn(
                     "px-4 py-1.5 rounded-r-pill text-[13.5px] font-medium transition-all duration-300",
                     isActive
-                      ? "bg-white/[0.12] text-white shadow-sm font-semibold text-orchid"
-                      : "text-tx-2 hover:text-white hover:bg-white/[0.06]"
+                      ? "bg-white/[0.18] text-white shadow-sm font-semibold"
+                      : "text-white/90 hover:text-white hover:bg-white/[0.12]"
                   )}
                 >
                   {item.label}
@@ -95,7 +95,7 @@ export default function Nav() {
               Deploy with Curiosity
             </Button>
             <button
-              className="menuBtn group transition-all duration-300 hover:border-orchid"
+              className="menuBtn group transition-all duration-300 hover:border-white text-white border-white/20 bg-white/[0.08] backdrop-blur-md"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="site-menu"
@@ -106,13 +106,14 @@ export default function Nav() {
                 <i />
                 <i />
               </span>
-              <span className="transition-colors group-hover:text-orchid">
+              <span className="text-white font-medium transition-colors">
                 {open ? "Close" : "Menu"}
               </span>
             </button>
           </div>
         </div>
       </header>
+
 
       {/* Fullscreen interactive overlay */}
       <div
