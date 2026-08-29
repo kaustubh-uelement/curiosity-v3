@@ -58,22 +58,34 @@ export default function StackCards({ items, className }) {
             style={{ top: `calc(var(--nav-h) + ${24 + i * 14}px)`, zIndex: i + 1 }}
           >
             <div
-              className="stackCard"
+              className="stackCard relative group overflow-hidden border border-white/20 shadow-[0_-20px_60px_rgba(0,0,0,0.5)] transition-transform duration-200"
               style={{
                 background: gradientFor(i, items.length),
-                transform: `scale(${1 - p * 0.06})`,
+                transform: `scale(${1 - p * 0.055}) translateY(${p * -8}px)`,
                 opacity: 1 - p * 0.35,
               }}
             >
-              <div>
-                <span className="sNum">
+              {/* Specular top light edge */}
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                aria-hidden="true"
+              />
+
+              <div className="relative z-10">
+                <span className="sNum font-mono text-[12px] tracking-[0.18em] text-white/70">
                   {String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
                 </span>
-                <div className="sRule" />
-                <span className="sKick">{item.kicker}</span>
-                <h3>{item.title}</h3>
+                <div className="sRule my-5 h-[1px] bg-white/20" />
+                <span className="sKick font-mono text-[11px] uppercase tracking-[0.18em] text-white/80 mb-4 block">
+                  {item.kicker}
+                </span>
+                <h3 className="text-[clamp(24px,3.2vw,42px)] font-display font-medium tracking-tight text-white">
+                  {item.title}
+                </h3>
               </div>
-              <p>{item.body}</p>
+              <p className="relative z-10 text-[clamp(14.5px,1.4vw,16.5px)] leading-[1.65] text-white/85">
+                {item.body}
+              </p>
             </div>
           </div>
         );
@@ -95,4 +107,5 @@ function gradientFor(i, total) {
   const [a, b] = stops[Math.min(i, stops.length - 1)];
   return `linear-gradient(150deg, ${a} 0%, ${b} 100%)`;
 }
+
 

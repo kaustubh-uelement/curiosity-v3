@@ -15,7 +15,7 @@ export default function Nav() {
 
   /* Solidify the bar once scrolled past the fold edge */
   useEffect(() => {
-    const onScroll = () => setStuck(window.scrollY > 24);
+    const onScroll = () => setStuck(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -41,27 +41,64 @@ export default function Nav() {
     };
   }, [open]);
 
+  // Primary desktop navigation items (excluding Home and Contact to keep the header uncluttered)
+  const desktopNavItems = NAV.filter(
+    (item) => item.href !== "/" && item.href !== "/contact"
+  );
+
   return (
     <>
       <header
         className={cn(
-          "nav",
-          (stuck || open) && "stuck",
+          "nav transition-all duration-400",
+          (stuck || open) && "stuck shadow-[0_4px_30px_rgba(0,0,0,0.5)]",
           open && "menuOpen"
         )}
       >
         <div className="navIn">
-          <Link className="logo" href="/" aria-label="Curiosity AI — Home">
-            <Logo />
-            <span>Curiosity AI</span>
+          <Link
+            className="logo group transition-transform duration-300 hover:scale-[1.02]"
+            href="/"
+            aria-label="Curiosity AI — Home"
+          >
+            <Logo className="transition-transform duration-300 group-hover:rotate-12" />
+            <span className="font-display font-semibold tracking-tight text-[17px] text-white">
+              Curiosity AI
+            </span>
           </Link>
 
+          {/* Desktop inline navigation */}
+          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] p-1.5 rounded-r-pill backdrop-blur-md">
+            {desktopNavItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "px-4 py-1.5 rounded-r-pill text-[13.5px] font-medium transition-all duration-300",
+                    isActive
+                      ? "bg-white/[0.12] text-white shadow-sm font-semibold text-orchid"
+                      : "text-tx-2 hover:text-white hover:bg-white/[0.06]"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+
           <div className="navRight">
-            <Button href="/contact" variant="primary" size="sm">
+            <Button
+              href="/contact"
+              variant="primary"
+              size="sm"
+              className="hidden sm:inline-flex shadow-sm hover:shadow-[0_0_20px_rgba(205,130,255,0.3)]"
+            >
               Deploy with Curiosity
             </Button>
             <button
-              className="menuBtn"
+              className="menuBtn group transition-all duration-300 hover:border-orchid"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="site-menu"
@@ -72,12 +109,15 @@ export default function Nav() {
                 <i />
                 <i />
               </span>
-              {open ? "Close" : "Menu"}
+              <span className="transition-colors group-hover:text-orchid">
+                {open ? "Close" : "Menu"}
+              </span>
             </button>
           </div>
         </div>
       </header>
 
+      {/* Fullscreen interactive overlay */}
       <div
         id="site-menu"
         className={cn("overlay", open && "show")}
@@ -86,22 +126,38 @@ export default function Nav() {
         <div className="ovIn">
           <nav aria-label="Primary navigation">
             <ul className="ovList">
-              {NAV.map((item, i) => (
-                <li key={item.href + item.label}>
-                  <Link
-                    href={item.href}
-                    style={{ transitionDelay: open ? `${120 + i * 55}ms` : "0ms" }}
-                    tabIndex={open ? 0 : -1}
-                  >
-                    <span className="ovNum">{String(i + 1).padStart(2, "0")}</span>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {NAV.map((item, i) => {
+                const isActive = pathname === item.href;
+                return (
+                  <li key={item.href + item.label}>
+                    <Link
+                      href={item.href}
+                      style={{ transitionDelay: open ? `${100 + i * 45}ms` : "0ms" }}
+                      tabIndex={open ? 0 : -1}
+                      className={cn(
+                        "group transition-all duration-300",
+                        isActive && "text-orchid font-semibold"
+                      )}
+                    >
+                      <span className="ovNum group-hover:text-orchid transition-colors">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="transition-transform duration-300 group-hover:translate-x-3">
+                        {item.label}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
           <div className="ovFoot">
-            <a href={`mailto:${SITE.email.deploy}`}>{SITE.email.deploy}</a>
+            <a
+              className="hover:text-orchid transition-colors"
+              href={`mailto:${SITE.email.deploy}`}
+            >
+              {SITE.email.deploy}
+            </a>
             <span>{SITE.address}</span>
           </div>
         </div>
@@ -109,4 +165,5 @@ export default function Nav() {
     </>
   );
 }
+
 

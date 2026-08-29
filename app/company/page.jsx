@@ -68,13 +68,15 @@ export default function Company() {
       <section className="sec">
         <Container>
           <Reveal className="g2" style={{ gap: 48, alignItems: "start" }}>
-            <div>
-              <Badge variant="kicker-active">Founder</Badge>
+            <div className="p-6 sm:p-8 rounded-2xl border border-line bg-white/[0.015] backdrop-blur-md">
+              <Badge variant="kicker-active" dot>Founder</Badge>
               <h2 className="dispLg" style={{ marginTop: 18 }}>Punit Goyal</h2>
-              <p className="cTag" style={{ marginTop: 12 }}>Founder &amp; CEO, Curiosity AI</p>
-              <div className="specs" style={{ marginTop: 24 }}>
+              <p className="cTag font-mono text-orchid mt-3">Founder &amp; CEO, Curiosity AI</p>
+              <div className="specs flex flex-wrap gap-2 mt-6">
                 {CREDS.map((c) => (
-                  <span key={c}>{c}</span>
+                  <Badge variant="spec" key={c}>
+                    {c}
+                  </Badge>
                 ))}
               </div>
             </div>

@@ -24,31 +24,67 @@ function Item({ index, kicker, title, body, isOpen, onToggle }) {
   }, [isOpen]);
 
   return (
-    <div className={cn("accItem", isOpen && "open")}>
+    <div
+      className={cn(
+        "accItem relative transition-colors duration-300",
+        isOpen && "open bg-white/[0.015]"
+      )}
+    >
+      {/* Glowing active indicator bar on the left edge */}
+      <div
+        className={cn(
+          "absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-orchid via-violet to-electric transition-opacity duration-300",
+          isOpen ? "opacity-100" : "opacity-0"
+        )}
+        aria-hidden="true"
+      />
+
       <button
         id={buttonId}
-        className="accBtn"
+        className="accBtn group px-2 sm:px-4 cursor-pointer"
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={panelId}
       >
-        <span className="accNum">{String(index + 1).padStart(2, "0")}</span>
-        <span>
-          {kicker ? <span className="cTag block mb-1.5">{kicker}</span> : null}
-          <span className="accTitle">{title}</span>
+        <span
+          className={cn(
+            "accNum font-mono text-[11.5px] tracking-[0.16em] transition-colors duration-300",
+            isOpen ? "text-orchid font-medium" : "text-tx-3 group-hover:text-tx-2"
+          )}
+        >
+          {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="accIcon" aria-hidden="true" />
+        <span className="text-left">
+          {kicker ? <span className="cTag block mb-1.5">{kicker}</span> : null}
+          <span
+            className={cn(
+              "accTitle font-display font-medium text-[clamp(17px,1.9vw,23px)] transition-colors duration-300",
+              isOpen ? "text-white" : "text-tx group-hover:text-orchid"
+            )}
+          >
+            {title}
+          </span>
+        </span>
+        <span
+          className={cn(
+            "accIcon transition-transform duration-300",
+            isOpen && "rotate-45 text-orchid"
+          )}
+          aria-hidden="true"
+        />
       </button>
       <div
         id={panelId}
         role="region"
         aria-labelledby={buttonId}
-        className="accPanel"
+        className="accPanel overflow-hidden transition-[height] duration-500 ease-custom-out"
         style={{ height }}
         aria-hidden={!isOpen}
       >
-        <div className="accInner" ref={innerRef}>
-          <p>{body}</p>
+        <div className="accInner px-2 sm:px-4 pb-7 pt-1" ref={innerRef}>
+          <p className="text-tx-2 text-[15px] leading-[1.68] max-w-[760px]">
+            {body}
+          </p>
         </div>
       </div>
     </div>
@@ -58,7 +94,7 @@ function Item({ index, kicker, title, body, isOpen, onToggle }) {
 export default function Accordion({ items, defaultOpen = 0, className }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className={cn("acc", className)}>
+    <div className={cn("acc border-t border-line", className)}>
       {items.map((item, i) => (
         <Item
           key={item.title || item.q || i}
@@ -73,4 +109,5 @@ export default function Accordion({ items, defaultOpen = 0, className }) {
     </div>
   );
 }
+
 

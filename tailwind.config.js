@@ -61,6 +61,18 @@ module.exports = {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
         },
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+        pulseSlow: {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" },
+        },
+        flowLine: {
+          "0%": { strokeDashoffset: "100" },
+          "100%": { strokeDashoffset: "0" },
+        },
       },
       animation: {
         drift1: "drift1 24s ease-in-out infinite",
@@ -68,6 +80,8 @@ module.exports = {
         drift3: "drift3 27s ease-in-out infinite",
         blip: "blip 2.4s ease-in-out infinite",
         slide: "slide 38s linear infinite",
+        shimmer: "shimmer 2.5s infinite",
+        pulseSlow: "pulseSlow 4s ease-in-out infinite",
       },
     },
   },

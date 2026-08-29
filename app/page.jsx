@@ -72,13 +72,29 @@ export default function Home() {
             </div>
           </div>
 
-          <Reveal className="annc" as={Link} href={ANNOUNCEMENT.href} style={{ marginTop: 40 }}>
-            <span className="anncMeta">
-              <span className="k">{ANNOUNCEMENT.kicker}</span>
-              <span className="d">{ANNOUNCEMENT.date}</span>
+          <Reveal
+            className="annc group relative overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(205,130,255,0.15)] hover:border-line-2"
+            as={Link}
+            href={ANNOUNCEMENT.href}
+            style={{ marginTop: 40 }}
+          >
+            {/* Shimmer light-edge reflection */}
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-orchid/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              aria-hidden="true"
+            />
+            <span className="anncMeta flex flex-col gap-1.5 flex-none">
+              <span className="k font-mono text-[10.5px] tracking-[0.16em] uppercase text-orchid font-semibold">
+                {ANNOUNCEMENT.kicker}
+              </span>
+              <span className="d font-mono text-[11px] text-tx-3">
+                {ANNOUNCEMENT.date}
+              </span>
             </span>
-            <span className="t">{ANNOUNCEMENT.title}</span>
-            <span className="arw" aria-hidden="true">
+            <span className="t flex-1 min-w-[200px] text-[15px] leading-snug text-white/95 group-hover:text-white transition-colors">
+              {ANNOUNCEMENT.title}
+            </span>
+            <span className="arw flex-none text-tx-3 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:text-white" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M4 9h10M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" strokeWidth="1.4" />
               </svg>
@@ -267,8 +283,7 @@ export default function Home() {
   );
 }
 
-/* Dot-field illustrations for the 01/02/03 cards — SharpLink uses
-   rendered dot artwork; these are generated so there are no image assets. */
+/* Dot-field illustrations for the 01/02/03 cards with gradient glows */
 function DotViz({ index }) {
   const cols = 22;
   const rows = 11;
@@ -298,13 +313,36 @@ function DotViz({ index }) {
         r = Math.max(0.8, 3.2 - d * 0.7);
         o = Math.max(0.1, 0.9 - d * 0.2);
       }
-      dots.push(<circle key={`${x}-${y}`} cx={cx} cy={cy} r={r} fill="#CD82FF" opacity={o} />);
+      dots.push(
+        <circle
+          key={`${x}-${y}`}
+          cx={cx}
+          cy={cy}
+          r={r}
+          fill="url(#dotGradient)"
+          opacity={o}
+          className="transition-all duration-300"
+        />
+      );
     }
   }
   return (
-    <svg viewBox="0 0 320 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <svg
+      viewBox="0 0 320 175"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+      className="transition-transform duration-500 group-hover:scale-105"
+    >
+      <defs>
+        <linearGradient id="dotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#CD82FF" />
+          <stop offset="50%" stopColor="#8752FA" />
+          <stop offset="100%" stopColor="#4500F9" />
+        </linearGradient>
+      </defs>
       {dots}
     </svg>
   );
 }
+
 
