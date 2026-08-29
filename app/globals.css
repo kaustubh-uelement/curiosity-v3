@@ -532,29 +532,43 @@
   inset: 0;
   z-index: 3;
   pointer-events: none;
-  overflow: hidden;
 }
 
-/* Mountain image pushed to bottom 65% of hero so text area is clear */
+.heroMountainInner {
+  position: absolute;
+  inset: 0;
+}
+
+/* Mountain image positioned from the top (center 70px) so the peak is never cut */
 .heroMountainImg {
   object-fit: cover;
-  object-position: center bottom;
-  /* Fade the very top edge of the mountain into the gradient behind */
-  -webkit-mask-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0,0,0,0.6) 20%,
-    rgba(0,0,0,1) 40%,
-    rgba(0,0,0,1) 100%
-  );
-  mask-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0,0,0,0.6) 20%,
-    rgba(0,0,0,1) 40%,
-    rgba(0,0,0,1) 100%
-  );
+  object-position: center 70px;
+  filter: brightness(0.82) contrast(1.05) saturate(0.92);
 }
+
+/* Gentle dark tint applied ONLY on the mountain silhouette matching image position */
+.heroMountainDarkMask {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 6, 17, 0.06) 0%,
+    rgba(10, 6, 17, 0.20) 40%,
+    rgba(10, 6, 17, 0.42) 75%,
+    rgba(10, 6, 17, 0.62) 100%
+  );
+  -webkit-mask-image: url('/mountain.webp');
+  mask-image: url('/mountain.webp');
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center 70px;
+  mask-position: center 70px;
+}
+
+
+
+
 
 .mesh {
   position: absolute;

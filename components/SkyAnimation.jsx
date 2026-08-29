@@ -99,15 +99,20 @@ export default function SkyAnimation({ className }) {
       <div className="skyFade" />
       {/* Mountain — sits above rotating stars, gradient is behind it via skyWrap background */}
       <div className="heroMountain">
-        <Image
-          src="/mountain.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="heroMountainImg"
-        />
+        <div className="heroMountainInner">
+          <Image
+            src="/mountain.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="heroMountainImg"
+          />
+          <div className="heroMountainDarkMask" />
+        </div>
       </div>
     </div>
   );
 }
+
+
