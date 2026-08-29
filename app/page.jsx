@@ -33,22 +33,25 @@ export default function Home() {
         <Container className="heroIn">
           <div className="heroTop" />
 
-          <Reveal variant="rev">
-            <Badge variant="kicker-active">Curiosity AI</Badge>
-          </Reveal>
+          <div className="flex flex-col items-end text-right">
+            <Reveal variant="rev">
+              <Badge variant="kicker-active">Curiosity AI</Badge>
+            </Reveal>
 
-          <h1 className="dispHero heroH">
-            <span className="mask">
-              <Reveal variant="revUp" as="span" style={{ display: "block" }}>
-                Compute with
-              </Reveal>
-            </span>
-            <span className="mask">
-              <Reveal variant="revUp" as="span" delay={120} style={{ display: "block" }}>
-                an Edge
-              </Reveal>
-            </span>
-          </h1>
+            <h1 className="dispHero heroH text-right ml-auto">
+              <span className="mask">
+                <Reveal variant="revUp" as="span" style={{ display: "block", textAlign: "right" }}>
+                  Compute with
+                </Reveal>
+              </span>
+              <span className="mask">
+                <Reveal variant="revUp" as="span" delay={120} style={{ display: "block", textAlign: "right" }}>
+                  an Edge
+                </Reveal>
+              </span>
+            </h1>
+          </div>
+
 
           <div className="heroRow">
             <div>
