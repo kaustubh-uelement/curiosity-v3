@@ -1631,6 +1631,8 @@
 .mask {
   overflow: hidden;
   display: block;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
 }
 
 /* prefers-reduced-motion intentionally NOT applied globally — animations are core to the design */
