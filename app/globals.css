@@ -549,10 +549,10 @@
   inset: 0;
 }
 
-/* Mountain image positioned from the top so the peak is never cut */
+/* Mountain image positioned down so peak is intact and sits lower in the hero */
 .heroMountainImg {
   object-fit: cover;
-  object-position: center top;
+  object-position: center 110px;
   filter: brightness(0.82) contrast(1.05) saturate(0.92);
 }
 
@@ -572,11 +572,12 @@
   mask-image: url('/mountain.webp');
   -webkit-mask-size: cover;
   mask-size: cover;
-  -webkit-mask-position: center top;
-  mask-position: center top;
+  -webkit-mask-position: center 110px;
+  mask-position: center 110px;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
+
 
 
 
