@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { INPUTS, OUTPUTS } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -150,21 +151,30 @@ export default function Flow({ className }) {
             aria-hidden="true"
           />
 
-          {/* Orbital Core Ring */}
-          <div className="fRing relative w-16 h-16 rounded-full border border-white/40 flex items-center justify-center bg-white/10 backdrop-blur-md mb-4 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-transform duration-700 hover:rotate-90">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <path
-                d="M16 1.5 L19.8 12.2 L30.5 16 L19.8 19.8 L16 30.5 L12.2 19.8 L1.5 16 L12.2 12.2 Z"
-                fill="#ffffff"
-                className="transition-transform duration-500 group-hover:scale-110"
-              />
-            </svg>
+          {/* Orbital Core Ring with Official Icon */}
+          <div className="fRing relative w-16 h-16 rounded-full border border-white/40 flex items-center justify-center bg-white/10 backdrop-blur-md mb-3.5 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-transform duration-500 hover:scale-110 p-3 overflow-hidden">
+            <Image
+              src="/curiosity-ai-icon.png"
+              alt="Curiosity AI Icon"
+              width={48}
+              height={48}
+              className="w-full h-full object-contain drop-shadow"
+              priority
+            />
           </div>
 
-          <span className="fn font-display font-semibold tracking-tight text-[23px] text-white leading-tight">
-            Curiosity AI
-          </span>
-          <span className="fs font-mono text-[11px] tracking-[0.18em] uppercase text-white/90 font-medium mt-2 px-3 py-1 rounded-full bg-white/15 border border-white/20">
+          {/* Official White Brand Logo */}
+          <div className="my-1.5 flex items-center justify-center">
+            <Image
+              src="/curiosity-ai-white-logo.png"
+              alt="Curiosity AI"
+              width={185}
+              height={22}
+              className="h-6 sm:h-7 w-auto object-contain drop-shadow"
+              priority
+            />
+          </div>
+          <span className="fs font-mono text-[11px] tracking-[0.18em] uppercase text-white/90 font-medium mt-1.5 px-3 py-1 rounded-full bg-white/15 border border-white/20">
             Orchestration Core
           </span>
 
