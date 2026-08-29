@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SkyAnimation from "@/components/SkyAnimation";
 import Mesh from "@/components/Mesh";
 import Dashboard from "@/components/Dashboard";
 import Marquee from "@/components/Marquee";
@@ -28,7 +29,7 @@ export default function Home() {
     <>
       {/* ============ HERO ============ */}
       <header className="hero">
-        <Mesh />
+        <SkyAnimation />
         <Container className="heroIn">
           <div className="heroTop" />
 
