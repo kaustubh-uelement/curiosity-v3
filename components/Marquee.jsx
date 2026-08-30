@@ -2,7 +2,7 @@ import { PARTNERS } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 export default function Marquee({ className }) {
-  const items = [...PARTNERS, ...PARTNERS];
+  const items = [...PARTNERS, ...PARTNERS, ...PARTNERS, ...PARTNERS];
   return (
     <div className={cn("marq", className)} aria-label="AI Factory partners ticker">
       <div className="marqTrack">

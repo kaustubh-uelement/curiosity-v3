@@ -892,12 +892,20 @@
   padding: 26px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  position: relative;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 .marqTrack {
   display: flex;
   gap: 64px;
   width: max-content;
-  animation: slide 38s linear infinite;
+  animation: slide 42s linear infinite;
+  will-change: transform;
+}
+.marq:hover .marqTrack {
+  animation-play-state: paused;
 }
 .marqTrack span {
   display: flex;
@@ -919,6 +927,15 @@
   border-radius: 50%;
   background: var(--violet);
   flex: none;
+}
+
+@keyframes slide {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 /* ==========================================================================
