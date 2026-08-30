@@ -49,7 +49,7 @@ export default function Platform() {
         </Container>
       </section>
 
-      <section className="sec">
+      <section className="py-20 sm:py-28 lg:py-36 relative z-10 bg-ink-2/40 border-y border-line">
         <Container>
           <SectionHeader
             kicker="Business model"
