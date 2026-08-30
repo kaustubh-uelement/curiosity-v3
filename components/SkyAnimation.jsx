@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
@@ -97,20 +96,6 @@ export default function SkyAnimation({ className }) {
     <div className={cn("skyWrap", className)} aria-hidden="true">
       <ul className="sky" ref={skyRef} />
       <div className="skyFade" />
-      {/* Mountain — sits above rotating stars, gradient is behind it via skyWrap background */}
-      <div className="heroMountain">
-        <div className="heroMountainInner">
-          <Image
-            src="/mountain.webp"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="heroMountainImg"
-          />
-          <div className="heroMountainDarkMask" />
-        </div>
-      </div>
     </div>
   );
 }

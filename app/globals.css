@@ -117,7 +117,7 @@
    TYPE SCALE
    ========================================================================== */
 .dispHero {
-  font-size: clamp(46px, 9vw, 132px);
+  font-size: clamp(48px, 8.6vw, 132px);
   letter-spacing: -0.045em;
   line-height: 0.94;
   font-weight: 500;
@@ -475,7 +475,7 @@
 .skyWrap {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
   pointer-events: none;
   /* Gradient: sky blue (top) → lavender → dark blue → black (bottom) */
@@ -654,6 +654,11 @@
 .heroIn {
   position: relative;
   z-index: 4;
+  width: 100%;
+}
+.heroTitleContainer {
+  position: relative;
+  z-index: 2;
   width: 100%;
 }
 .heroTop {

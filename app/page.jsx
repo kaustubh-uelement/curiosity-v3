@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import SkyAnimation from "@/components/SkyAnimation";
 import Mesh from "@/components/Mesh";
 import Dashboard from "@/components/Dashboard";
@@ -29,8 +30,11 @@ export default function Home() {
     <>
       {/* ============ HERO ============ */}
       <header className="hero">
+        {/* Layer 1: Galaxy sky gradient, rotating stars, and atmospheric fade */}
         <SkyAnimation />
-        <Container className="heroIn">
+
+        {/* Layer 2: Hero title (behind mountain, above color gradient & stars) */}
+        <Container className="heroTitleContainer pointer-events-none">
           <div className="heroTop" />
 
           <div className="flex flex-col items-end text-right">
@@ -38,7 +42,7 @@ export default function Home() {
               {/* <Badge variant="kicker-active">Curiosity AI</Badge> */}
             </Reveal>
 
-            <h1 className="dispHero heroH text-right ml-auto">
+            <h1 className="dispHero heroH text-right ml-auto pointer-events-auto">
               <span className="mask">
                 <Reveal variant="revUp" as="span" style={{ display: "block", textAlign: "right" }}>
                   Compute with
@@ -51,6 +55,25 @@ export default function Home() {
               </span>
             </h1>
           </div>
+        </Container>
+
+        {/* Layer 3: Mountain silhouette & dark fade mask */}
+        <div className="heroMountain" aria-hidden="true">
+          <div className="heroMountainInner">
+            <Image
+              src="/mountain.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="heroMountainImg"
+            />
+            <div className="heroMountainDarkMask" />
+          </div>
+        </div>
+
+        {/* Layer 4: Interactive Hero Content & Live Dashboard */}
+        <Container className="heroIn">
 
 
           <div className="heroRow">
