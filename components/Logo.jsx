@@ -3,13 +3,12 @@ import { cn } from "@/lib/utils";
 
 /**
  * Curiosity AI Brand Logo Component
- * - variant="full" | "purple" (default): Purple horizontal brand wordmark logo (curiosity-ai-purple-logo.png)
- * - variant="icon": Square favicon / app icon mark (curiosity-ai-icon-purple.png)
- * - variant="blue": Electric blue horizontal brand wordmark logo (curiosity-ai-blue-logo.png)
+ * - variant="icon": Square favicon / app icon mark (curiosity-ai-icon-blue.png)
+ * - variant="blue" | "full" | default: Electric blue horizontal brand wordmark logo (curiosity-ai-blue-logo.png)
  * - variant="white": White horizontal brand wordmark logo (curiosity-ai-white-logo.png)
  */
 export default function Logo({
-  variant = "full",
+  variant = "blue",
   className,
   priority = false,
   width,
@@ -19,7 +18,7 @@ export default function Logo({
     const size = width || height || 28;
     return (
       <Image
-        src="/curiosity-ai-icon-purple.png"
+        src="/curiosity-ai-icon-blue.png"
         alt="Curiosity AI Icon"
         width={size}
         height={size}
@@ -31,19 +30,6 @@ export default function Logo({
 
   const defaultWidth = width || 175;
   const defaultHeight = height || 21;
-
-  if (variant === "blue") {
-    return (
-      <Image
-        src="/curiosity-ai-blue-logo.png"
-        alt="Curiosity AI"
-        width={defaultWidth}
-        height={defaultHeight}
-        priority={priority}
-        className={cn("h-6 sm:h-7 w-auto object-contain flex-none", className)}
-      />
-    );
-  }
 
   if (variant === "white") {
     return (
@@ -58,10 +44,10 @@ export default function Logo({
     );
   }
 
-  // Full purple brand logo (3400 x 400 aspect ratio)
+  // Electric blue horizontal brand wordmark logo (default / full / blue)
   return (
     <Image
-      src="/curiosity-ai-purple-logo.png"
+      src="/curiosity-ai-blue-logo.png"
       alt="Curiosity AI"
       width={defaultWidth}
       height={defaultHeight}

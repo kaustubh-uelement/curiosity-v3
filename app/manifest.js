@@ -9,12 +9,12 @@ export default function manifest() {
     theme_color: "#0A0611",
     icons: [
       {
-        src: "/curiosity-ai-icon-purple.png",
+        src: "/curiosity-ai-icon-blue.png",
         sizes: "192x192",
         type: "image/png",
       },
       {
-        src: "/curiosity-ai-icon-purple.png",
+        src: "/curiosity-ai-icon-blue.png",
         sizes: "512x512",
         type: "image/png",
       },

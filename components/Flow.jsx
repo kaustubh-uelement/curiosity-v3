@@ -154,7 +154,7 @@ export default function Flow({ className }) {
           {/* Orbital Core Ring with Official Icon */}
           <div className="fRing relative w-16 h-16 rounded-full border border-white/40 flex items-center justify-center bg-white/10 backdrop-blur-md mb-3.5 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-transform duration-500 hover:scale-110 p-3 overflow-hidden">
             <Image
-              src="/curiosity-ai-icon-purple.png"
+              src="/curiosity-ai-icon-blue.png"
               alt="Curiosity AI Icon"
               width={48}
               height={48}
@@ -163,10 +163,10 @@ export default function Flow({ className }) {
             />
           </div>
 
-          {/* Official Purple Brand Logo */}
+          {/* Official Blue Brand Logo */}
           <div className="my-1.5 flex items-center justify-center">
             <Image
-              src="/curiosity-ai-purple-logo.png"
+              src="/curiosity-ai-blue-logo.png"
               alt="Curiosity AI"
               width={185}
               height={22}
