@@ -50,8 +50,8 @@ export default function Nav() {
     <>
       <header
         className={cn(
-          "nav transition-all duration-400",
-          (stuck || open) && "stuck shadow-[0_4px_30px_rgba(0,0,0,0.5)]",
+          "nav",
+          (stuck || open) && "stuck",
           open && "menuOpen"
         )}
       >
