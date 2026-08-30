@@ -107,20 +107,18 @@ export default function Home() {
             </span>
           </Reveal>
 
+          {/* ============ LIVE DASHBOARD ============ */}
+          <div className="mt-12 sm:mt-16">
+            <Dashboard />
+            <div style={{ marginTop: 28 }}>
+              <TextLink href="/infrastructure">
+                More in the deployment roadmap
+              </TextLink>
+            </div>
+          </div>
+
         </Container>
       </header>
-
-      {/* ============ LIVE DASHBOARD ============ */}
-      <section className="secSm">
-        <Container>
-          <Dashboard />
-          <div style={{ marginTop: 28 }}>
-            <TextLink href="/infrastructure">
-              More in the deployment roadmap
-            </TextLink>
-          </div>
-        </Container>
-      </section>
 
       <Marquee />
 

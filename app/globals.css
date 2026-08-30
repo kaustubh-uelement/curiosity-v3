@@ -464,7 +464,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: calc(var(--nav-h) + 60px) 0 48px;
+  padding: calc(var(--nav-h) + 60px) 0 clamp(48px, 6vw, 72px);
   overflow: hidden;
 }
 
@@ -478,15 +478,16 @@
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  /* Gradient: pink (top) → lavender → dark blue → black (bottom) */
+  /* Gradient: sky blue (top) → lavender → dark blue → black (bottom) */
   background: linear-gradient(
     180deg,
     #5d95f0 0%,
-    #5a7ff0 16%,
-    #818cf8 30%,
-    #3730a3 50%,
-    #0f172a 70%,
-    #050508 100%
+    #5a7ff0 14%,
+    #818cf8 28%,
+    #3730a3 46%,
+    #171330 65%,
+    #0d091a 80%,
+    var(--ink) 100%
   );
 }
 
@@ -533,8 +534,10 @@
   background: linear-gradient(
     180deg,
     rgba(10, 6, 17, 0) 0%,
-    rgba(10, 6, 17, 0.0) 40%,
-    rgba(10, 6, 17, 0.5) 80%,
+    rgba(10, 6, 17, 0.0) 35%,
+    rgba(10, 6, 17, 0.35) 55%,
+    rgba(10, 6, 17, 0.75) 75%,
+    var(--ink) 95%,
     var(--ink) 100%
   );
 }
@@ -569,9 +572,11 @@
   background: linear-gradient(
     180deg,
     rgba(10, 6, 17, 0) 0%,
-    rgba(10, 6, 17, 0.20) 40%,
-    rgba(10, 6, 17, 0.42) 75%,
-    rgba(10, 6, 17, 0.62) 100%
+    rgba(10, 6, 17, 0.15) 35%,
+    rgba(10, 6, 17, 0.45) 60%,
+    rgba(10, 6, 17, 0.8) 80%,
+    var(--ink) 96%,
+    var(--ink) 100%
   );
   -webkit-mask-image: url('/mountain.webp');
   mask-image: url('/mountain.webp');
