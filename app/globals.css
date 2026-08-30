@@ -478,15 +478,15 @@
   z-index: 1;
   overflow: hidden;
   pointer-events: none;
-  /* Gradient: sky blue (top) → lavender → dark blue → black (bottom) */
+  /* Gradient: vibrant sky blue (top) → electric blue → radiant lavender → indigo → dark ink (bottom) */
   background: linear-gradient(
     180deg,
-    #5d95f0 0%,
-    #5a7ff0 14%,
-    #818cf8 28%,
-    #3730a3 46%,
-    #171330 65%,
-    #0d091a 80%,
+    #4e80d6 0%,
+    #4a6bd2 14%,
+    #6b70d3 28%,
+    #2f288c 46%,
+    #15112c 65%,
+    #0c0818 80%,
     var(--ink) 100%
   );
 }
