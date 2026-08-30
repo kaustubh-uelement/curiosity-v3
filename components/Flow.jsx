@@ -76,7 +76,7 @@ export default function Flow({ className }) {
   const [isCoreHovered, setIsCoreHovered] = useState(false);
 
   return (
-    <div className={cn("flow-container relative my-6", className)}>
+    <div className={cn("flow-container relative my-6 overflow-hidden", className)}>
       {/* Visual Ambient Core Glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[340px] bg-gradient-to-r from-electric/25 via-violet/30 to-orchid/25 rounded-full blur-[100px] opacity-70"

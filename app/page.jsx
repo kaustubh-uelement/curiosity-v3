@@ -120,7 +120,7 @@ export default function Home() {
                 {ANNOUNCEMENT.date}
               </span>
             </span>
-            <span className="t flex-1 min-w-[200px] text-[15px] leading-snug text-white font-medium">
+            <span className="t flex-1 min-w-0 sm:min-w-[200px] text-[15px] leading-snug text-white font-medium">
               {ANNOUNCEMENT.title}
             </span>
             <span className="arw flex-none text-white/80 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:text-white" aria-hidden="true">
