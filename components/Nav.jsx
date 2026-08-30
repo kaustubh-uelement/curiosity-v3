@@ -90,7 +90,7 @@ export default function Nav() {
               href="/contact"
               variant="primary"
               size="sm"
-              className="hidden sm:inline-flex shadow-sm hover:shadow-[0_0_20px_rgba(205,130,255,0.3)] whitespace-nowrap flex-shrink-0"
+              className="hidden sm:inline-flex shadow-sm hover:shadow-[0_0_20px_rgba(56,189,248,0.35)] whitespace-nowrap flex-shrink-0"
             >
               Deploy with Curiosity
             </Button>

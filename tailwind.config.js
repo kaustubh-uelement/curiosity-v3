@@ -8,14 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        orchid: "#CD82FF",
-        violet: "#8752FA",
-        electric: "#4500F9",
-        "electric-deep": "#3200bd",
+        orchid: "#38BDF8",
+        violet: "#2B7FFF",
+        electric: "#0052FF",
+        "electric-deep": "#0038B8",
         mist: "#E7EAEE",
         ink: "#0A0611",
-        "ink-2": "#100A1C",
-        "ink-3": "#170F26",
+        "ink-2": "#0A0E1F",
+        "ink-3": "#101733",
         tx: "#FFFFFF",
         "tx-2": "rgba(231,234,238,0.62)",
         "tx-3": "rgba(231,234,238,0.38)",
@@ -54,8 +54,8 @@ module.exports = {
           "50%": { transform: "translate(6%,-9%) scale(1.16)" },
         },
         blip: {
-          "0%, 100%": { opacity: "1", boxShadow: "0 0 0 0 rgba(205,130,255,.55)" },
-          "50%": { opacity: ".5", boxShadow: "0 0 0 7px rgba(205,130,255,0)" },
+          "0%, 100%": { opacity: "1", boxShadow: "0 0 0 0 rgba(56,189,248,.55)" },
+          "50%": { opacity: ".5", boxShadow: "0 0 0 7px rgba(56,189,248,0)" },
         },
         slide: {
           from: { transform: "translateX(0)" },

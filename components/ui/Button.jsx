@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 const variantMap = {
   primary: "btnP bg-mist text-ink hover:bg-white hover:shadow-[0_0_24px_rgba(231,234,238,0.25)]",
   glass: "btnG border border-line-2 text-tx bg-glass backdrop-blur-[20px] hover:border-tx hover:bg-glass-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)]",
-  electric: "btnE bg-electric text-white hover:bg-violet hover:shadow-[0_0_30px_rgba(69,0,249,0.4)]",
+  electric: "btnE bg-electric text-white hover:bg-violet hover:shadow-[0_0_30px_rgba(0,82,255,0.4)]",
   p: "btnP bg-mist text-ink hover:bg-white hover:shadow-[0_0_24px_rgba(231,234,238,0.25)]",
   g: "btnG border border-line-2 text-tx bg-glass backdrop-blur-[20px] hover:border-tx hover:bg-glass-2",
-  e: "btnE bg-electric text-white hover:bg-violet hover:shadow-[0_0_30px_rgba(69,0,249,0.4)]",
+  e: "btnE bg-electric text-white hover:bg-violet hover:shadow-[0_0_30px_rgba(0,82,255,0.4)]",
 };
 
 const sizeMap = {

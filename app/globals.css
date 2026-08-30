@@ -4,20 +4,20 @@
 
 /* ==========================================================================
    CURIOSITY AI: DESIGN SYSTEM & TOKENS
-   Palette: Orchid #CD82FF · Violet #8752FA · Electric #4500F9
+   Palette: Sky Blue #38BDF8 · Royal Blue #2B7FFF · Electric Blue #0052FF
             Mist #E7EAEE · Ink #0A0611
    ========================================================================== */
 
 :root {
-  --orchid: #CD82FF;
-  --violet: #8752FA;
-  --electric: #4500F9;
+  --orchid: #38BDF8;
+  --violet: #2B7FFF;
+  --electric: #0052FF;
   --mist: #E7EAEE;
   --ink: #0A0611;
 
-  --ink-2: #100A1C;
-  --ink-3: #170F26;
-  --electric-deep: #3200bd;
+  --ink-2: #0A0E1F;
+  --ink-3: #101733;
+  --electric-deep: #0038B8;
 
   --tx: #FFFFFF;
   --tx-2: rgba(231, 234, 238, 0.62);
@@ -416,8 +416,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 60% at 78% 18%, rgba(69, 0, 249, 0.55), transparent 62%),
-    radial-gradient(ellipse 60% 50% at 20% 88%, rgba(205, 130, 255, 0.28), transparent 64%);
+    radial-gradient(ellipse 70% 60% at 78% 18%, rgba(0, 82, 255, 0.45), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 20% 88%, rgba(56, 189, 248, 0.22), transparent 64%);
 }
 .ovIn {
   position: relative;
@@ -629,7 +629,7 @@
   color: var(--orchid);
   font-weight: 300;
   margin-left: 0.08em;
-  text-shadow: 0 0 12px rgba(205, 130, 255, 0.7);
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
   animation: typewriterBlink 0.9s step-start infinite;
   vertical-align: baseline;
 }
@@ -1243,7 +1243,7 @@
   border-color: var(--line-2);
   color: var(--tx);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(205, 130, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.15);
 }
 
 /* roadmap rail */
@@ -1265,8 +1265,8 @@
   border-color: var(--line-2);
 }
 .railItem.live {
-  border-color: rgba(205, 130, 255, .4);
-  background: linear-gradient(170deg, rgba(69, 0, 249, .22), rgba(255, 255, 255, .01));
+  border-color: rgba(56, 189, 248, .4);
+  background: linear-gradient(170deg, rgba(0, 82, 255, .22), rgba(255, 255, 255, .01));
 }
 .railItem .rv {
   font-family: var(--font-display), sans-serif;
@@ -1296,7 +1296,7 @@
 }
 .railItem.live .rdot {
   background: var(--orchid);
-  box-shadow: 0 0 0 6px rgba(205, 130, 255, .16);
+  box-shadow: 0 0 0 6px rgba(56, 189, 248, .16);
 }
 .railItem p {
   color: var(--tx-2);
@@ -1491,7 +1491,7 @@
   padding: clamp(56px, 8vw, 110px) clamp(24px, 4vw, 56px);
   text-align: center;
   background: linear-gradient(160deg, var(--electric) 0%, var(--violet) 55%, var(--orchid) 100%);
-  box-shadow: 0 20px 60px rgba(69, 0, 249, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 82, 255, 0.25);
 }
 .statement::after {
   content: "";
@@ -1590,7 +1590,7 @@
 }
 .nlForm input:focus {
   border-color: var(--orchid);
-  box-shadow: 0 0 16px rgba(205, 130, 255, 0.2);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
 }
 .nlNote {
   font-size: 13px;

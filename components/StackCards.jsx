@@ -141,11 +141,11 @@ export default function StackCards({ items = [] }) {
 
 function gradientFor(i, total) {
   const stops = [
-    ["#4500F9", "#2A0796"],
-    ["#5A25F5", "#33108F"],
-    ["#8752FA", "#3E1C9E"],
-    ["#A566FC", "#5A2BB8"],
-    ["#CD82FF", "#6E35C9"],
+    ["#0038B8", "#00185A"],
+    ["#0052FF", "#00258A"],
+    ["#1D63FF", "#0836B0"],
+    ["#2B7FFF", "#144ACC"],
+    ["#38BDF8", "#1E60E0"],
   ];
   const [a, b] = stops[Math.min(i, stops.length - 1)];
   return `linear-gradient(150deg, ${a} 0%, ${b} 100%)`;
