@@ -166,7 +166,7 @@ export default function Flow({ className }) {
           {/* Official Blue Brand Logo */}
           <div className="my-1.5 flex items-center justify-center">
             <Image
-              src="/curiosity-ai-blue-logo.png"
+              src="/curiosity-ai-white-logo.png"
               alt="Curiosity AI"
               width={185}
               height={22}
