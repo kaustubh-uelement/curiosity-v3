@@ -122,7 +122,7 @@
    TYPE SCALE
    ========================================================================== */
 .dispHero {
-  font-size: clamp(36px, 8.5vw, 132px);
+  font-size: clamp(48px, 9vw, 132px);
   letter-spacing: -0.045em;
   line-height: 0.96;
   font-weight: 500;
@@ -574,13 +574,17 @@
 
 .heroMountainInner {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: -2vw;
+  width: calc(100% + 4vw);
+  transform: translateX(2vw);
 }
 
 /* Mountain image positioned down so peak is intact and sits lower in the hero */
 .heroMountainImg {
   object-fit: cover;
-  object-position: center 110px;
+  object-position: 47% 110px;
   filter: brightness(0.82) contrast(1.05) saturate(0.92);
 }
 
@@ -602,10 +606,32 @@
   mask-image: url('/mountain.webp');
   -webkit-mask-size: cover;
   mask-size: cover;
-  -webkit-mask-position: center 110px;
-  mask-position: center 110px;
+  -webkit-mask-position: 47% 110px;
+  mask-position: 47% 110px;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+}
+
+/* ==========================================================================
+   TYPEWRITER CURSOR ANIMATION
+   ========================================================================== */
+@keyframes typewriterBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriterCursor {
+  display: inline-block;
+  color: var(--orchid);
+  font-weight: 300;
+  margin-left: 0.08em;
+  text-shadow: 0 0 12px rgba(205, 130, 255, 0.7);
+  animation: typewriterBlink 0.9s step-start infinite;
+  vertical-align: baseline;
 }
 
 
@@ -1671,6 +1697,18 @@
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 1080px) {
+  .heroMountainInner {
+    left: -1vw;
+    width: calc(100% + 2vw);
+    transform: translateX(1vw);
+  }
+  .heroMountainImg {
+    object-position: 38% 110px;
+  }
+  .heroMountainDarkMask {
+    -webkit-mask-position: 38% 110px;
+    mask-position: 38% 110px;
+  }
   .heroRow { grid-template-columns: 1fr; }
   .dash { grid-template-columns: 1fr 1fr; }
   .dashCell { padding-right: 22px; border-bottom: 1px solid var(--line); }
@@ -1686,6 +1724,22 @@
   .nl { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
+  .heroH {
+    max-width: 100%;
+    font-size: clamp(46px, 12vw, 68px);
+  }
+  .heroMountainInner {
+    left: 0;
+    width: 100%;
+    transform: none;
+  }
+  .heroMountainImg {
+    object-position: 33% 110px;
+  }
+  .heroMountainDarkMask {
+    -webkit-mask-position: 33% 110px;
+    mask-position: 33% 110px;
+  }
   .g2, .g3, .g4, .pill3, .partners, .newsGrid, .rail { grid-template-columns: 1fr; }
   .dash { grid-template-columns: 1fr; }
   .dashCell { border-right: 0; padding: 20px 16px; }

@@ -8,6 +8,7 @@ import StackCards from "@/components/StackCards";
 import Accordion from "@/components/Accordion";
 import Flow from "@/components/Flow";
 import Reveal from "@/components/Reveal";
+import Typewriter from "@/components/Typewriter";
 import Statement from "@/components/Statement";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -43,16 +44,12 @@ export default function Home() {
             </Reveal>
 
             <h1 className="dispHero heroH text-right ml-auto pointer-events-auto">
-              <span className="mask">
-                <Reveal variant="revUp" as="span" style={{ display: "block", textAlign: "right" }}>
-                  Compute with
-                </Reveal>
-              </span>
-              <span className="mask">
-                <Reveal variant="revUp" as="span" delay={120} style={{ display: "block", textAlign: "right" }}>
-                  an Edge
-                </Reveal>
-              </span>
+              <Typewriter
+                lines={["Compute with", "an Edge"]}
+                speed={110}
+                delay={350}
+                pauseBetweenLines={350}
+              />
             </h1>
           </div>
         </Container>
