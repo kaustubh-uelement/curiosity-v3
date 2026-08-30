@@ -61,7 +61,7 @@ export default function Nav() {
             href="/"
             aria-label="Curiosity AI, Home"
           >
-            <Logo variant="full" priority className="h-6 sm:h-6 w-auto" />
+            <Logo variant="white" priority className="h-6 sm:h-7 w-auto" />
           </Link>
 
           {/* Desktop inline navigation over frosted glass - visible on large/xl screens only where there is ample room */}
@@ -73,10 +73,10 @@ export default function Nav() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "px-3.5 py-1.5 rounded-r-pill text-[13.5px] font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0",
+                    "px-3.5 py-1.5 rounded-r-pill text-[14px] font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0",
                     isActive
                       ? "bg-white/[0.18] text-white shadow-sm font-semibold"
-                      : "text-white/90 hover:text-white hover:bg-white/[0.12]"
+                      : "text-white/90 hover:text-white hover:bg-white/[0.12] font-semibold"
                   )}
                 >
                   {item.label}

@@ -481,8 +481,8 @@
   /* Gradient: pink (top) → lavender → dark blue → black (bottom) */
   background: linear-gradient(
     180deg,
-    #f472b6 0%,
-    #c084fc 16%,
+    #5d95f0 0%,
+    #5a7ff0 16%,
     #818cf8 30%,
     #3730a3 50%,
     #0f172a 70%,

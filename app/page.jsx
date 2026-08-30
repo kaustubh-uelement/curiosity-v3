@@ -35,7 +35,7 @@ export default function Home() {
 
           <div className="flex flex-col items-end text-right">
             <Reveal variant="rev">
-              <Badge variant="kicker-active">Curiosity AI</Badge>
+              {/* <Badge variant="kicker-active">Curiosity AI</Badge> */}
             </Reveal>
 
             <h1 className="dispHero heroH text-right ml-auto">
