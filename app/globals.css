@@ -565,14 +565,14 @@
   z-index: 1;
   overflow: hidden;
   pointer-events: none;
-  /* Balanced sky blend: Soft Sky Glow (#68b9fc) -> Skyline Blue (#349dff) -> Electric Blue (#0045d5) -> Royal Deep Blue (#001b7f) -> Midnight Navy (#00041c) */
+  /* Fine-tuned sky blend (one tone deeper): Rich Sky (#4eabfd) -> Skyline Blue (#349dff) -> Electric Blue (#0045d5) -> Royal Deep Blue (#001b7f) -> Midnight Navy (#00041c) */
   background: linear-gradient(
     180deg,
-    #68b9fc 0%,
-    #349dff 16%,
-    #0045d5 40%,
-    #001b7f 66%,
-    #00041c 88%,
+    #4eabfd 0%,
+    #349dff 20%,
+    #0045d5 44%,
+    #001b7f 68%,
+    #00041c 86%,
     var(--ink) 100%
   );
 }

@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
 import Card from "@/components/ui/Card";
 import TextLink from "@/components/ui/TextLink";
+import ContactForm from "@/components/ContactForm";
 import { SITE } from "@/lib/content";
 
 export const metadata = {
@@ -57,6 +58,15 @@ export default function Contact() {
                 </TextLink>
               </Card>
             ))}
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* ============ INTERACTIVE CONTACT FORM ============ */}
+      <section className="sec">
+        <Container size="sm">
+          <Reveal>
+            <ContactForm />
           </Reveal>
         </Container>
       </section>
