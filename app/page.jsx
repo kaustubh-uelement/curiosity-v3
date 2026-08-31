@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </Container>
 
-        {/* Layer 3: Mountain silhouette & dark fade mask */}
+        {/* Layer 3: Mountain silhouette & dark fade */}
         <div className="heroMountain" aria-hidden="true">
           <div className="heroMountainInner">
             <Image
@@ -62,10 +62,10 @@ export default function Home() {
               alt=""
               fill
               priority
-              sizes="100vw"
+              quality={90}
+              sizes="(max-width: 768px) 150vw, 100vw"
               className="heroMountainImg"
             />
-            <div className="heroMountainDarkMask" />
           </div>
         </div>
 
