@@ -1803,11 +1803,11 @@
     transform: none;
   }
   .heroMountainImg {
-    object-position: 33% 110px;
+    object-position: 48% 110px;
   }
   .heroMountainDarkMask {
-    -webkit-mask-position: 33% 110px;
-    mask-position: 33% 110px;
+    -webkit-mask-position: 48% 110px;
+    mask-position: 48% 110px;
   }
   .g2, .g3, .g4, .pill3, .partners, .newsGrid, .rail { grid-template-columns: 1fr; }
   .dash { grid-template-columns: 1fr; }
@@ -1848,5 +1848,14 @@
   .badgeRow {
     gap: 8px 10px;
     margin-top: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .heroMountainImg {
+    object: position 45% 110px;
+  }
+  .heroMountainDarkMask {
+    -webkit-mask-position: 45% 110px;
+    mask-position: 45% 110px;
   }
 }
