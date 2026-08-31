@@ -217,63 +217,65 @@
 /* ==========================================================================
    BUTTONS
    ========================================================================== */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px 30px;
-  border-radius: var(--r-pill);
-  font-size: 14.5px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: transform .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease), box-shadow .3s var(--ease);
-  position: relative;
-  overflow: hidden;
-}
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: var(--r-pill);
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease), box-shadow .3s var(--ease);
+    position: relative;
+    overflow: hidden;
+  }
 
-.btn:active {
-  transform: scale(.97);
-}
-.btnP {
-  background: var(--mist);
-  color: var(--ink);
-}
-.btnP:hover {
-  background: #fff;
-  transform: translateY(-2px);
-}
-.btnG {
-  border-color: var(--line-2);
-  color: var(--tx);
-  backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
-  background: var(--glass);
-}
-.btnG:hover {
-  border-color: var(--tx);
-  background: var(--glass-2);
-  transform: translateY(-2px);
-}
-.btnE {
-  background: var(--electric);
-  color: #fff;
-}
-.btnE:hover {
-  background: var(--violet);
-  transform: translateY(-2px);
-}
-.btnSm {
-  padding: 10px 20px;
-  font-size: 13.5px;
-}
-.btns {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  .btn:active {
+    transform: scale(.97);
+  }
+  .btnP {
+    background: var(--mist);
+    color: var(--ink);
+  }
+  .btnP:hover {
+    background: #fff;
+    transform: translateY(-2px);
+  }
+  .btnG {
+    border-color: var(--line-2);
+    color: var(--tx);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    background: var(--glass);
+  }
+  .btnG:hover {
+    border-color: var(--tx);
+    background: var(--glass-2);
+    transform: translateY(-2px);
+  }
+  .btnE {
+    background: var(--electric);
+    color: #fff;
+  }
+  .btnE:hover {
+    background: var(--violet);
+    transform: translateY(-2px);
+  }
+  .btnSm {
+    padding: 10px 20px;
+    font-size: 13.5px;
+  }
+  .btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
 }
 
 .tlink {
@@ -391,36 +393,46 @@
 .menuBtn {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
-  font-family: var(--font-mono), monospace;
-  font-size: 12px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  padding: 11px 20px;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
   border-radius: var(--r-pill);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  transition: border-color .3s var(--ease), background .3s var(--ease);
+  transition: border-color .3s var(--ease), background .3s var(--ease), transform .2s var(--ease);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 .menuBtn:hover {
   border-color: #FFFFFF;
   background: rgba(255, 255, 255, 0.14);
 }
+.menuBtn:active {
+  transform: scale(0.95);
+}
 
 .menuBars {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
-  width: 15px;
+  width: 16px;
+  height: 13px;
+  position: relative;
 }
 .menuBars i {
   height: 1.5px;
+  width: 16px;
   background: currentColor;
   display: block;
+  border-radius: 1px;
   transition: transform .35s var(--ease), opacity .25s;
+  transform-origin: center;
 }
 .menuOpen .menuBars i:nth-child(1) {
   transform: translateY(5.5px) rotate(45deg);

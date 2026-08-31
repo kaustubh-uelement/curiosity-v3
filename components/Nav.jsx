@@ -86,17 +86,20 @@ export default function Nav() {
           </nav>
 
           <div className="navRight flex items-center gap-3 flex-shrink-0 flex-nowrap whitespace-nowrap">
-            <Button
-              href="/contact"
-              variant="primary"
-              size="sm"
-              className="hidden sm:inline-flex shadow-sm hover:shadow-[0_0_20px_rgba(56,189,248,0.35)] whitespace-nowrap flex-shrink-0"
-            >
-              Deploy with Curiosity
-            </Button>
-            {/* Hamburger menu button - only appears when middle menu is hidden on smaller/medium screens */}
+            <div className="hidden xl:flex items-center">
+              <Button
+                href="/contact"
+                variant="primary"
+                size="sm"
+                className="shadow-sm hover:shadow-[0_0_20px_rgba(56,189,248,0.35)] whitespace-nowrap flex-shrink-0"
+              >
+                Deploy with Curiosity
+              </Button>
+            </div>
+            {/* Hamburger menu button - only appears when desktop menu is hidden */}
             <button
-              className="menuBtn xl:hidden group transition-all duration-300 hover:border-white text-white border-white/20 bg-white/[0.08] backdrop-blur-md whitespace-nowrap flex-shrink-0"
+              type="button"
+              className="menuBtn xl:hidden group transition-all duration-300 hover:border-white text-white border-white/20 bg-white/[0.08] backdrop-blur-md flex items-center justify-center flex-shrink-0"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="site-menu"
@@ -106,9 +109,6 @@ export default function Nav() {
                 <i />
                 <i />
                 <i />
-              </span>
-              <span className="text-white font-medium transition-colors">
-                {open ? "Close" : "Menu"}
               </span>
             </button>
           </div>
