@@ -557,7 +557,7 @@
 
 /* ==========================================================================
    CODEPEN SKY ANIMATION (Funky 5000-star galaxy rotation)
-   Gradient: Lavender -> Blue -> Blackish Blue -> Black (top to bottom)
+   Gradient: Ice Blue (#9dd5fa) -> Skyline Blue (#349dff) -> Electric Blue (#0045d5) -> Royal Deep Blue (#001b7f) -> Midnight Navy (#00041c)
    ========================================================================== */
 .skyWrap {
   position: absolute;
@@ -565,15 +565,14 @@
   z-index: 1;
   overflow: hidden;
   pointer-events: none;
-  /* Gradient: vibrant sky blue (top) → electric blue → radiant lavender → indigo → dark ink (bottom) */
+  /* Balanced sky blend: Soft Sky Glow (#68b9fc) -> Skyline Blue (#349dff) -> Electric Blue (#0045d5) -> Royal Deep Blue (#001b7f) -> Midnight Navy (#00041c) */
   background: linear-gradient(
     180deg,
-    #4e80d6 0%,
-    #4a6bd2 14%,
-    #6b70d3 28%,
-    #2f288c 46%,
-    #15112c 65%,
-    #0c0818 80%,
+    #68b9fc 0%,
+    #349dff 16%,
+    #0045d5 40%,
+    #001b7f 66%,
+    #00041c 88%,
     var(--ink) 100%
   );
 }
@@ -620,10 +619,10 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(10, 6, 17, 0) 0%,
-    rgba(10, 6, 17, 0.0) 35%,
-    rgba(10, 6, 17, 0.35) 55%,
-    rgba(10, 6, 17, 0.75) 75%,
+    rgba(0, 4, 28, 0) 0%,
+    rgba(0, 4, 28, 0) 40%,
+    rgba(0, 4, 28, 0.30) 60%,
+    rgba(0, 4, 28, 0.70) 80%,
     var(--ink) 95%,
     var(--ink) 100%
   );
@@ -665,10 +664,10 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(10, 6, 17, 0) 0%,
-    rgba(10, 6, 17, 0.15) 35%,
-    rgba(10, 6, 17, 0.45) 60%,
-    rgba(10, 6, 17, 0.8) 80%,
+    rgba(0, 4, 28, 0) 0%,
+    rgba(0, 4, 28, 0.15) 35%,
+    rgba(0, 4, 28, 0.45) 60%,
+    rgba(0, 4, 28, 0.80) 80%,
     var(--ink) 96%,
     var(--ink) 100%
   );
