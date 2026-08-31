@@ -8,21 +8,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        orchid: "#38BDF8",
-        violet: "#2B7FFF",
-        electric: "#0052FF",
-        "electric-deep": "#0038B8",
-        mist: "#E7EAEE",
-        ink: "#0A0611",
-        "ink-2": "#0A0E1F",
-        "ink-3": "#101733",
-        tx: "#FFFFFF",
-        "tx-2": "rgba(231,234,238,0.62)",
-        "tx-3": "rgba(231,234,238,0.38)",
-        line: "rgba(255,255,255,0.10)",
-        "line-2": "rgba(255,255,255,0.20)",
-        glass: "rgba(255,255,255,0.04)",
-        "glass-2": "rgba(255,255,255,0.07)",
+        orchid: "#5CAEFF", // Bright Sky
+        violet: "#1662CC", // Deep Sky
+        electric: "#1E7DFF", // Cerulean
+        "electric-deep": "#0A3B7A", // Twilight Blue
+        mist: "#CDE4FF", // Mist Blue
+        ink: "#010A16", // Ink Sky
+        "ink-2": "#021024", // Midnight
+        "ink-3": "#041A35", // Night Blue
+        tx: "#F0F7FF", // Cloud
+        "tx-2": "rgba(205,228,255,0.70)",
+        "tx-3": "rgba(151,201,255,0.45)",
+        line: "rgba(182,216,255,0.12)",
+        "line-2": "rgba(182,216,255,0.22)",
+        glass: "rgba(4,26,53,0.40)",
+        "glass-2": "rgba(6,41,86,0.50)",
+
+        // Full 16-color Sky Blue Palette
+        cloud: "#F0F7FF",
+        "arctic-sky": "#E1F0FF",
+        "mist-blue": "#CDE4FF",
+        "light-sky": "#B6D8FF",
+        "clear-sky": "#97C9FF",
+        "day-sky": "#78BAFF",
+        "bright-sky": "#5CAEFF",
+        "pure-sky": "#3D9BFF",
+        cerulean: "#1E7DFF",
+        "deep-sky": "#1662CC",
+        azure: "#0F4FA3",
+        "twilight-blue": "#0A3B7A",
+        "evening-sky": "#062956",
+        "night-blue": "#041A35",
+        midnight: "#021024",
+        "ink-sky": "#010A16",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
@@ -54,8 +72,8 @@ module.exports = {
           "50%": { transform: "translate(6%,-9%) scale(1.16)" },
         },
         blip: {
-          "0%, 100%": { opacity: "1", boxShadow: "0 0 0 0 rgba(56,189,248,.55)" },
-          "50%": { opacity: ".5", boxShadow: "0 0 0 7px rgba(56,189,248,0)" },
+          "0%, 100%": { opacity: "1", boxShadow: "0 0 0 0 rgba(92,174,255,.55)" },
+          "50%": { opacity: ".5", boxShadow: "0 0 0 7px rgba(92,174,255,0)" },
         },
         slide: {
           from: { transform: "translateX(0)" },

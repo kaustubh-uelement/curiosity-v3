@@ -104,7 +104,7 @@ export default function Flow({ className }) {
                 className={cn(
                   "fNode group relative flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden",
                   isHovered
-                    ? "border-orchid/80 bg-white/[0.08] shadow-[0_0_24px_rgba(56,189,248,0.25)] -translate-x-1 text-white"
+                    ? "border-orchid/80 bg-white/[0.08] shadow-[0_0_24px_rgba(92,174,255,0.25)] -translate-x-1 text-white"
                     : "border-white/10 bg-white/[0.025] hover:border-white/25 text-tx-2"
                 )}
               >
@@ -120,7 +120,7 @@ export default function Flow({ className }) {
                   className={cn(
                     "flex-none flex items-center justify-center w-7 h-7 rounded-lg transition-all duration-300",
                     isHovered
-                      ? "bg-orchid text-ink shadow-[0_0_12px_rgba(56,189,248,0.6)]"
+                      ? "bg-orchid text-ink shadow-[0_0_12px_rgba(92,174,255,0.6)]"
                       : "bg-white/5 border border-white/10 text-orchid"
                   )}
                 >
@@ -143,11 +143,11 @@ export default function Flow({ className }) {
         <div
           onMouseEnter={() => setIsCoreHovered(true)}
           onMouseLeave={() => setIsCoreHovered(false)}
-          className="fCore relative z-20 flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl border border-white/30 bg-gradient-to-b from-electric via-violet to-ink-2 shadow-[0_0_60px_rgba(0,82,255,0.45)] transition-all duration-500 hover:shadow-[0_0_90px_rgba(56,189,248,0.6)] hover:scale-[1.03] overflow-hidden text-center cursor-default"
+          className="fCore relative z-20 flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl border border-white/30 bg-gradient-to-b from-electric via-violet to-ink-2 shadow-[0_0_60px_rgba(30,125,255,0.45)] transition-all duration-500 hover:shadow-[0_0_90px_rgba(92,174,255,0.6)] hover:scale-[1.03] overflow-hidden text-center cursor-default"
         >
           {/* Animated Background Rays */}
           <div
-            className="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.25)_0%,transparent_70%)] animate-pulseSlow"
+            className="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_center,rgba(92,174,255,0.25)_0%,transparent_70%)] animate-pulseSlow"
             aria-hidden="true"
           />
 
@@ -205,7 +205,7 @@ export default function Flow({ className }) {
                 className={cn(
                   "fNode group relative flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden",
                   isHovered
-                    ? "border-violet/80 bg-white/[0.08] shadow-[0_0_24px_rgba(43,127,255,0.25)] translate-x-1 text-white"
+                    ? "border-violet/80 bg-white/[0.08] shadow-[0_0_24px_rgba(22,98,204,0.25)] translate-x-1 text-white"
                     : "border-white/10 bg-white/[0.025] hover:border-white/25 text-tx-2"
                 )}
               >
@@ -221,7 +221,7 @@ export default function Flow({ className }) {
                   className={cn(
                     "flex-none flex items-center justify-center w-7 h-7 rounded-lg transition-all duration-300",
                     isHovered
-                      ? "bg-violet text-white shadow-[0_0_12px_rgba(43,127,255,0.6)]"
+                      ? "bg-violet text-white shadow-[0_0_12px_rgba(22,98,204,0.6)]"
                       : "bg-white/5 border border-white/10 text-violet"
                   )}
                 >

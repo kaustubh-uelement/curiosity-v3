@@ -5,8 +5,8 @@ export default function manifest() {
     description: "Compute AI Infrastructure Platform for Abundant Intelligence",
     start_url: "/",
     display: "standalone",
-    background_color: "#0A0611",
-    theme_color: "#0A0611",
+    background_color: "#010A16",
+    theme_color: "#010A16",
     icons: [
       {
         src: "/curiosity-ai-icon-blue.png",

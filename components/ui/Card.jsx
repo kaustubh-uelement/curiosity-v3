@@ -62,7 +62,7 @@ export default function Card({
           className="pointer-events-none absolute -inset-px rounded-[inherit] transition-opacity duration-300"
           style={{
             opacity: mousePos.opacity,
-            background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(56, 189, 248, 0.12), transparent 70%)`,
+            background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(92, 174, 255, 0.14), transparent 70%)`,
           }}
           aria-hidden="true"
         />

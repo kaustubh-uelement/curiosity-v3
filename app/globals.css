@@ -3,31 +3,31 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   CURIOSITY AI: DESIGN SYSTEM & TOKENS
-   Palette: Sky Blue #38BDF8 · Royal Blue #2B7FFF · Electric Blue #0052FF
-            Mist #E7EAEE · Ink #0A0611
+   CURIOSITY AI: DESIGN SYSTEM & TOKENS (Sky Blue Palette)
+   Palette: Bright Sky #5CAEFF · Deep Sky #1662CC · Cerulean #1E7DFF
+            Mist Blue #CDE4FF · Ink Sky #010A16 · Cloud #F0F7FF
    ========================================================================== */
 
 :root {
-  --orchid: #38BDF8;
-  --violet: #2B7FFF;
-  --electric: #0052FF;
-  --mist: #E7EAEE;
-  --ink: #0A0611;
+  --orchid: #5CAEFF;       /* Bright Sky */
+  --violet: #1662CC;       /* Deep Sky */
+  --electric: #1E7DFF;     /* Cerulean */
+  --electric-deep: #0A3B7A;/* Twilight Blue */
+  --mist: #CDE4FF;         /* Mist Blue */
+  --ink: #010A16;          /* Ink Sky */
 
-  --ink-2: #0A0E1F;
-  --ink-3: #101733;
-  --electric-deep: #0038B8;
+  --ink-2: #021024;        /* Midnight */
+  --ink-3: #041A35;        /* Night Blue */
 
-  --tx: #FFFFFF;
-  --tx-2: rgba(231, 234, 238, 0.62);
-  --tx-3: rgba(231, 234, 238, 0.38);
+  --tx: #F0F7FF;           /* Cloud */
+  --tx-2: rgba(205, 228, 255, 0.70);
+  --tx-3: rgba(151, 201, 255, 0.45);
 
-  --line: rgba(255, 255, 255, 0.10);
-  --line-2: rgba(255, 255, 255, 0.20);
+  --line: rgba(182, 216, 255, 0.12);
+  --line-2: rgba(182, 216, 255, 0.22);
 
-  --glass: rgba(255, 255, 255, 0.04);
-  --glass-2: rgba(255, 255, 255, 0.07);
+  --glass: rgba(4, 26, 53, 0.40);
+  --glass-2: rgba(6, 41, 86, 0.50);
   --blur: blur(20px) saturate(160%);
 
   --r-xl: 32px;
@@ -41,6 +41,24 @@
 
   --nav-h: 76px;
   --pad: clamp(16px, 4vw, 40px);
+
+  /* Full 16-Color Palette Variables */
+  --color-cloud: #F0F7FF;
+  --color-arctic-sky: #E1F0FF;
+  --color-mist-blue: #CDE4FF;
+  --color-light-sky: #B6D8FF;
+  --color-clear-sky: #97C9FF;
+  --color-day-sky: #78BAFF;
+  --color-bright-sky: #5CAEFF;
+  --color-pure-sky: #3D9BFF;
+  --color-cerulean: #1E7DFF;
+  --color-deep-sky: #1662CC;
+  --color-azure: #0F4FA3;
+  --color-twilight-blue: #0A3B7A;
+  --color-evening-sky: #062956;
+  --color-night-blue: #041A35;
+  --color-midnight: #021024;
+  --color-ink-sky: #010A16;
 }
 
 @layer base {
@@ -317,14 +335,14 @@
   z-index: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 6, 17, 0.72) 0%,
-    rgba(10, 6, 17, 0.68) 18%,
-    rgba(10, 6, 17, 0.58) 36%,
-    rgba(10, 6, 17, 0.44) 52%,
-    rgba(10, 6, 17, 0.28) 68%,
-    rgba(10, 6, 17, 0.14) 82%,
-    rgba(10, 6, 17, 0.04) 92%,
-    rgba(10, 6, 17, 0) 100%
+    rgba(1, 10, 22, 0.72) 0%,
+    rgba(1, 10, 22, 0.68) 18%,
+    rgba(1, 10, 22, 0.58) 36%,
+    rgba(1, 10, 22, 0.44) 52%,
+    rgba(1, 10, 22, 0.28) 68%,
+    rgba(1, 10, 22, 0.14) 82%,
+    rgba(1, 10, 22, 0.04) 92%,
+    rgba(1, 10, 22, 0) 100%
   );
   backdrop-filter: blur(16px) saturate(150%);
   -webkit-backdrop-filter: blur(16px) saturate(150%);
@@ -468,8 +486,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 60% at 78% 18%, rgba(0, 82, 255, 0.45), transparent 62%),
-    radial-gradient(ellipse 60% 50% at 20% 88%, rgba(56, 189, 248, 0.22), transparent 64%);
+    radial-gradient(ellipse 70% 60% at 78% 18%, rgba(30, 125, 255, 0.45), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 20% 88%, rgba(92, 174, 255, 0.22), transparent 64%);
 }
 .ovIn {
   position: relative;
@@ -736,7 +754,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 6, 17, .42) 0%, rgba(10, 6, 17, .12) 34%, rgba(10, 6, 17, .86) 88%, var(--ink) 100%);
+  background: linear-gradient(180deg, rgba(1, 10, 22, .42) 0%, rgba(1, 10, 22, .12) 34%, rgba(1, 10, 22, .86) 88%, var(--ink) 100%);
 }
 .grain {
   position: absolute;
@@ -1560,7 +1578,7 @@
   padding: clamp(56px, 8vw, 110px) clamp(24px, 4vw, 56px);
   text-align: center;
   background: linear-gradient(160deg, var(--electric) 0%, var(--violet) 55%, var(--orchid) 100%);
-  box-shadow: 0 20px 60px rgba(0, 82, 255, 0.25);
+  box-shadow: 0 20px 60px rgba(30, 125, 255, 0.25);
 }
 .statement::after {
   content: "";
@@ -1608,7 +1626,7 @@
   display: none;
 }
 .pHero .mesh::after {
-  background: linear-gradient(180deg, rgba(10, 6, 17, .55), var(--ink) 92%);
+  background: linear-gradient(180deg, rgba(1, 10, 22, .55), var(--ink) 92%);
 }
 .pHeroIn {
   position: relative;

@@ -356,9 +356,9 @@ function DotViz({ index }) {
     >
       <defs>
         <linearGradient id="dotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#38BDF8" />
-          <stop offset="50%" stopColor="#2B7FFF" />
-          <stop offset="100%" stopColor="#0052FF" />
+          <stop offset="0%" stopColor="#5CAEFF" />
+          <stop offset="50%" stopColor="#1662CC" />
+          <stop offset="100%" stopColor="#1E7DFF" />
         </linearGradient>
       </defs>
       {dots}
