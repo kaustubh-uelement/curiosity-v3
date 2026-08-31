@@ -116,6 +116,15 @@ export default function RootLayout({ children }) {
       id="top"
       className={`${fontDisplay.variable} ${fontBody.variable} ${fontMono.variable} scroll-smooth`}
     >
+      <head>
+        <link
+          rel="preload"
+          href="/mountain.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </head>
       <body className="bg-ink text-tx font-body antialiased selection:bg-electric selection:text-white">
         <Nav />
         <main>{children}</main>

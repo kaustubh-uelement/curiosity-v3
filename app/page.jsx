@@ -62,8 +62,10 @@ export default function Home() {
               alt=""
               fill
               priority
-              quality={90}
-              sizes="(max-width: 768px) 150vw, 100vw"
+              loading="eager"
+              fetchPriority="high"
+              quality={85}
+              sizes="100vw"
               className="heroMountainImg"
             />
           </div>
