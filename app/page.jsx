@@ -80,8 +80,8 @@ export default async function Home() {
               priority
               loading="eager"
               fetchPriority="high"
-              quality={85}
-              sizes="100vw"
+              quality={100}
+              unoptimized
               className="heroMountainImg"
             />
           </div>
