@@ -93,12 +93,12 @@ export default async function Home() {
 
           <div className="heroRow">
             <div>
-              <div className="badgeRow">
+              {/* <div className="badgeRow">
                 <Badge variant="kicker" className="!text-white font-medium">Deploying across</Badge>
                 <Badge variant="default" className="!text-white font-medium">Mumbai</Badge>
                 <Badge variant="default" className="!text-white font-medium">Chennai</Badge>
                 <Badge variant="default" className="!text-white font-medium">NVIDIA · AMD</Badge>
-              </div>
+              </div> */}
               <div className="btns heroBtns">
                 <Button href="/platform" variant="primary">
                   Explore the platform
@@ -109,8 +109,8 @@ export default async function Home() {
               </div>
             </div>
 
-            <div className="heroSub">
-              <p className="lead text-white font-normal leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+            <div className="heroSub text-right ml-auto">
+              <p className="lead text-right text-white font-normal leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
                 {SITE.intro}
               </p>
             </div>
