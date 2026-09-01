@@ -1,9 +1,10 @@
 export default function robots() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curiosityai.co";
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://curiosityai.in/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

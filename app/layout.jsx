@@ -24,8 +24,10 @@ const fontMono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curiosityai.co";
+
 export const metadata = {
-  metadataBase: new URL("https://curiosityai.in"),
+  metadataBase: new URL(siteUrl),
   title: {
     default:
       "Curiosity AI | Compute AI Infrastructure for Abundant Intelligence",
@@ -34,7 +36,7 @@ export const metadata = {
   description:
     "Curiosity AI is a full-stack compute AI infrastructure platform bringing 5MW to 100MW+ of AI Factory capacity online for large-scale neo-clouds and enterprise AI.",
   applicationName: "Curiosity AI",
-  authors: [{ name: "Curiosity AI", url: "https://curiosityai.in" }],
+  authors: [{ name: "Curiosity AI", url: siteUrl }],
   creator: "Curiosity AI",
   publisher: "Curiosity AI",
   keywords: [
@@ -81,14 +83,15 @@ export const metadata = {
       "Bringing 5MW to 100MW+ of AI compute infrastructure online with AI Factories across India.",
     type: "website",
     locale: "en_US",
-    url: "https://curiosityai.in",
+    url: siteUrl,
     siteName: "Curiosity AI",
     images: [
       {
         url: "/curiosity-og-image.png",
-        width: 1894,
-        height: 826,
+        width: 1884,
+        height: 865,
         alt: "Curiosity AI | Compute AI Infrastructure for Abundant Intelligence",
+        type: "image/png",
       },
     ],
   },
@@ -97,10 +100,17 @@ export const metadata = {
     title: "Curiosity AI | Compute AI Infrastructure for Abundant Intelligence",
     description:
       "Bringing 5MW to 100MW+ of AI compute infrastructure online with AI Factories across India.",
-    images: ["/curiosity-og-image.png"],
+    images: [
+      {
+        url: "/curiosity-og-image.png",
+        width: 1884,
+        height: 865,
+        alt: "Curiosity AI | Compute AI Infrastructure for Abundant Intelligence",
+      },
+    ],
   },
   alternates: {
-    canonical: "https://curiosityai.in",
+    canonical: siteUrl,
   },
   robots: {
     index: true,
