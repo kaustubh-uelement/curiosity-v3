@@ -1790,6 +1790,21 @@
   .nl { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
+  .skyWrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(35, 38, 50, 0.40) 25%,
+      rgba(22, 24, 32, 0.65) 55%,
+      rgba(12, 13, 20, 0.85) 80%,
+      var(--ink) 100%
+    );
+  }
   .heroH {
     max-width: 100%;
     font-size: clamp(30px, 8.5vw, 46px);
@@ -1801,7 +1816,7 @@
     transform: none;
   }
   .heroMountainImg {
-    object-position: 42% 215px;
+    object-position: 42% 115px;
   }
   .g2, .g3, .g4, .pill3, .partners, .newsGrid, .rail { grid-template-columns: 1fr; }
   .dash { grid-template-columns: 1fr; }
@@ -1846,6 +1861,6 @@
 }
 @media (max-width: 480px) {
   .heroMountainImg {
-    object-position: 41% 220px;
+    object-position: 41% 95px;
   }
 }
