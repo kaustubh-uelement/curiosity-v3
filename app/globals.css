@@ -555,17 +555,26 @@
   z-index: 1;
   overflow: hidden;
   pointer-events: none;
-  /* Brand Gradient: Bright Blue (#417EF3) at top -> Royal Violet (#5143D1) -> Deep Purple (#5D17B7) at bottom */
-  background: linear-gradient(
-    180deg,
-    #417EF3 0%,
-    #4962E3 20%,
-    #5143D1 42%,
-    #5725C2 64%,
-    #5D17B7 82%,
-    #380A72 92%,
-    var(--ink) 100%
-  );
+  /* Greyish overlay gradient (midway balance: light transparent grey -> dark transparent grey) */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(120, 130, 150, 0.12) 0%,
+      rgba(45, 50, 68, 0.28) 30%,
+      rgba(22, 25, 38, 0.48) 60%,
+      rgba(12, 14, 22, 0.70) 85%,
+      rgba(9, 4, 24, 0.90) 100%
+    ),
+    linear-gradient(
+      180deg,
+      #417EF3 0%,
+      #4962E3 20%,
+      #5143D1 42%,
+      #5725C2 64%,
+      #5D17B7 82%,
+      #380A72 92%,
+      var(--ink) 100%
+    );
 }
 
 .sky {
