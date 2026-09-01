@@ -61,10 +61,10 @@ export default async function Home() {
 
             <h1 className="dispHero heroH text-right ml-auto pointer-events-auto">
               <Typewriter
-                lines={["Compute with", "an Edge"]}
-                speed={110}
+                lines={["Compute AI Infrastructure", "for Abundant Intelligence"]}
+                speed={75}
                 delay={350}
-                pauseBetweenLines={350}
+                pauseBetweenLines={300}
               />
             </h1>
           </div>

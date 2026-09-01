@@ -659,7 +659,7 @@
 /* Mountain image positioned down so peak is intact and sits lower in the hero */
 .heroMountainImg {
   object-fit: cover;
-  object-position: 47% 110px;
+  object-position: 47% 210px;
   filter: brightness(0.85) contrast(1.06) saturate(0.95);
 }
 
@@ -762,9 +762,11 @@
   margin-bottom: auto;
 }
 .heroH {
-  max-width: 14ch;
+  max-width: 20ch;
   text-align: right;
   margin-left: auto;
+  font-size: clamp(36px, 6.8vw, 104px);
+  line-height: 1.0;
 }
 
 .heroRow {
@@ -1771,7 +1773,7 @@
     transform: translateX(1vw);
   }
   .heroMountainImg {
-    object-position: 42% 110px;
+    object-position: 42% 210px;
   }
   .heroRow { grid-template-columns: 1fr; }
   .dash { grid-template-columns: 1fr 1fr; }
@@ -1790,7 +1792,8 @@
 @media (max-width: 720px) {
   .heroH {
     max-width: 100%;
-    font-size: clamp(44px, 12vw, 58px);
+    font-size: clamp(30px, 8.5vw, 46px);
+    line-height: 1.04;
   }
   .heroMountainInner {
     left: 0;
@@ -1798,7 +1801,7 @@
     transform: none;
   }
   .heroMountainImg {
-    object-position: 42% 150px;
+    object-position: 42% 215px;
   }
   .g2, .g3, .g4, .pill3, .partners, .newsGrid, .rail { grid-template-columns: 1fr; }
   .dash { grid-template-columns: 1fr; }
@@ -1843,6 +1846,6 @@
 }
 @media (max-width: 480px) {
   .heroMountainImg {
-    object-position: 41% 160px;
+    object-position: 41% 220px;
   }
 }
