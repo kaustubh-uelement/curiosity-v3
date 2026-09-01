@@ -3,31 +3,31 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   CURIOSITY AI: DESIGN SYSTEM & TOKENS (Sky Blue Palette)
-   Palette: Bright Sky #5CAEFF · Deep Sky #1662CC · Cerulean #1E7DFF
-            Mist Blue #CDE4FF · Ink Sky #010A16 · Cloud #F0F7FF
+   CURIOSITY AI: DESIGN SYSTEM & TOKENS
+   Palette: Bright Blue #417EF3 · Deep Purple #5D17B7 · Light Violet #873CE6
+            Cosmic Ink #090418 · Mist Violet-Blue #D8CEFD · Crisp White #FAF8FF
    ========================================================================== */
 
 :root {
-  --orchid: #5CAEFF;       /* Bright Sky */
-  --violet: #1662CC;       /* Deep Sky */
-  --electric: #1E7DFF;     /* Cerulean */
-  --electric-deep: #0A3B7A;/* Twilight Blue */
-  --mist: #CDE4FF;         /* Mist Blue */
-  --ink: #010A16;          /* Ink Sky */
+  --orchid: #417EF3;       /* Bright Blue (Primary Highlight & Kicker) */
+  --violet: #5D17B7;       /* Deep Purple (Brand Core) */
+  --electric: #417EF3;     /* Bright Blue (Brand Accent) */
+  --electric-deep: #2C64D6;/* Mid-Deep Blue */
+  --mist: #D8CEFD;         /* Mist Violet-Blue */
+  --ink: #090418;          /* Cosmic Deep Ink Canvas */
 
-  --ink-2: #021024;        /* Midnight */
-  --ink-3: #041A35;        /* Night Blue */
+  --ink-2: #120928;        /* Elevated Surface */
+  --ink-3: #1C103C;        /* Glass / Tertiary Surface */
 
-  --tx: #F0F7FF;           /* Cloud */
-  --tx-2: rgba(205, 228, 255, 0.70);
-  --tx-3: rgba(151, 201, 255, 0.45);
+  --tx: #FAF8FF;           /* Primary Crisp Text */
+  --tx-2: rgba(235, 230, 255, 0.72);
+  --tx-3: rgba(180, 210, 255, 0.55);
 
-  --line: rgba(182, 216, 255, 0.12);
-  --line-2: rgba(182, 216, 255, 0.22);
+  --line: rgba(65, 126, 243, 0.16);
+  --line-2: rgba(65, 126, 243, 0.30);
 
-  --glass: rgba(4, 26, 53, 0.40);
-  --glass-2: rgba(6, 41, 86, 0.50);
+  --glass: rgba(18, 9, 40, 0.45);
+  --glass-2: rgba(28, 16, 60, 0.55);
   --blur: blur(20px) saturate(160%);
 
   --r-xl: 32px;
@@ -42,23 +42,13 @@
   --nav-h: 76px;
   --pad: clamp(16px, 4vw, 40px);
 
-  /* Full 16-Color Palette Variables */
-  --color-cloud: #F0F7FF;
-  --color-arctic-sky: #E1F0FF;
-  --color-mist-blue: #CDE4FF;
-  --color-light-sky: #B6D8FF;
-  --color-clear-sky: #97C9FF;
-  --color-day-sky: #78BAFF;
-  --color-bright-sky: #5CAEFF;
-  --color-pure-sky: #3D9BFF;
-  --color-cerulean: #1E7DFF;
-  --color-deep-sky: #1662CC;
-  --color-azure: #0F4FA3;
-  --color-twilight-blue: #0A3B7A;
-  --color-evening-sky: #062956;
-  --color-night-blue: #041A35;
-  --color-midnight: #021024;
-  --color-ink-sky: #010A16;
+  /* Brand Named Variables */
+  --color-bright-blue: #417EF3;
+  --color-deep-purple: #5D17B7;
+  --color-light-purple: #873CE6;
+  --color-royal-violet: #4E4FD7;
+  --color-dark-purple: #380A72;
+  --color-cosmic-ink: #090418;
 }
 
 @layer base {
@@ -335,14 +325,14 @@
   z-index: 0;
   background: linear-gradient(
     180deg,
-    rgba(1, 10, 22, 0.72) 0%,
-    rgba(1, 10, 22, 0.68) 18%,
-    rgba(1, 10, 22, 0.58) 36%,
-    rgba(1, 10, 22, 0.44) 52%,
-    rgba(1, 10, 22, 0.28) 68%,
-    rgba(1, 10, 22, 0.14) 82%,
-    rgba(1, 10, 22, 0.04) 92%,
-    rgba(1, 10, 22, 0) 100%
+    rgba(9, 4, 24, 0.72) 0%,
+    rgba(9, 4, 24, 0.68) 18%,
+    rgba(9, 4, 24, 0.58) 36%,
+    rgba(9, 4, 24, 0.44) 52%,
+    rgba(9, 4, 24, 0.28) 68%,
+    rgba(9, 4, 24, 0.14) 82%,
+    rgba(9, 4, 24, 0.04) 92%,
+    rgba(9, 4, 24, 0) 100%
   );
   backdrop-filter: blur(16px) saturate(150%);
   -webkit-backdrop-filter: blur(16px) saturate(150%);
@@ -486,8 +476,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 60% at 78% 18%, rgba(30, 125, 255, 0.45), transparent 62%),
-    radial-gradient(ellipse 60% 50% at 20% 88%, rgba(92, 174, 255, 0.22), transparent 64%);
+    radial-gradient(ellipse 70% 60% at 78% 18%, rgba(65, 126, 243, 0.40), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 20% 88%, rgba(93, 23, 183, 0.35), transparent 64%);
 }
 .ovIn {
   position: relative;
@@ -557,7 +547,7 @@
 
 /* ==========================================================================
    CODEPEN SKY ANIMATION (Funky 5000-star galaxy rotation)
-   Gradient: Ice Blue (#9dd5fa) -> Skyline Blue (#349dff) -> Electric Blue (#0045d5) -> Royal Deep Blue (#001b7f) -> Midnight Navy (#00041c)
+   Gradient: Bright Blue (#417EF3) at top -> Deep Purple (#5D17B7) at bottom
    ========================================================================== */
 .skyWrap {
   position: absolute;
@@ -565,14 +555,15 @@
   z-index: 1;
   overflow: hidden;
   pointer-events: none;
-  /* Fine-tuned sky blend (one tone deeper): Rich Sky (#4eabfd) -> Skyline Blue (#349dff) -> Electric Blue (#0045d5) -> Royal Deep Blue (#001b7f) -> Midnight Navy (#00041c) */
+  /* Brand Gradient: Bright Blue (#417EF3) at top -> Royal Violet (#5143D1) -> Deep Purple (#5D17B7) at bottom */
   background: linear-gradient(
     180deg,
-    #4eabfd 0%,
-    #349dff 20%,
-    #0045d5 44%,
-    #001b7f 68%,
-    #00041c 86%,
+    #417EF3 0%,
+    #4962E3 20%,
+    #5143D1 42%,
+    #5725C2 64%,
+    #5D17B7 82%,
+    #380A72 92%,
     var(--ink) 100%
   );
 }
@@ -619,10 +610,10 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(0, 4, 28, 0) 0%,
-    rgba(0, 4, 28, 0) 40%,
-    rgba(0, 4, 28, 0.30) 60%,
-    rgba(0, 4, 28, 0.70) 80%,
+    rgba(9, 4, 24, 0) 0%,
+    rgba(9, 4, 24, 0) 40%,
+    rgba(9, 4, 24, 0.30) 60%,
+    rgba(9, 4, 24, 0.70) 80%,
     var(--ink) 95%,
     var(--ink) 100%
   );
@@ -650,8 +641,8 @@
     180deg,
     transparent 0%,
     transparent 45%,
-    rgba(1, 10, 22, 0.40) 65%,
-    rgba(1, 10, 22, 0.85) 85%,
+    rgba(9, 4, 24, 0.40) 65%,
+    rgba(9, 4, 24, 0.85) 85%,
     var(--ink) 100%
   );
 }
@@ -727,7 +718,7 @@
   height: 52vw;
   right: -10%;
   top: 2%;
-  background: radial-gradient(circle, var(--violet), transparent 66%);
+  background: radial-gradient(circle, var(--electric-deep), transparent 66%);
   animation: drift2 30s ease-in-out infinite;
 }
 .mesh i:nth-child(3) {
@@ -735,7 +726,7 @@
   height: 46vw;
   left: 26%;
   bottom: -24%;
-  background: radial-gradient(circle, var(--orchid), transparent 66%);
+  background: radial-gradient(circle, var(--violet), transparent 66%);
   animation: drift3 27s ease-in-out infinite;
   opacity: .55;
 }
@@ -744,7 +735,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(1, 10, 22, .42) 0%, rgba(1, 10, 22, .12) 34%, rgba(1, 10, 22, .86) 88%, var(--ink) 100%);
+  background: linear-gradient(180deg, rgba(9, 4, 24, .42) 0%, rgba(9, 4, 24, .12) 34%, rgba(9, 4, 24, .86) 88%, var(--ink) 100%);
 }
 .grain {
   position: absolute;
@@ -1567,8 +1558,8 @@
   border-radius: var(--r-xl);
   padding: clamp(56px, 8vw, 110px) clamp(24px, 4vw, 56px);
   text-align: center;
-  background: linear-gradient(160deg, var(--electric) 0%, var(--violet) 55%, var(--orchid) 100%);
-  box-shadow: 0 20px 60px rgba(30, 125, 255, 0.25);
+  background: linear-gradient(160deg, #417EF3 0%, #5D17B7 55%, #873CE6 100%);
+  box-shadow: 0 20px 60px rgba(65, 126, 243, 0.28), 0 0 100px -20px rgba(93, 23, 183, 0.35);
 }
 .statement::after {
   content: "";
@@ -1616,7 +1607,7 @@
   display: none;
 }
 .pHero .mesh::after {
-  background: linear-gradient(180deg, rgba(1, 10, 22, .55), var(--ink) 92%);
+  background: linear-gradient(180deg, rgba(9, 4, 24, .55), var(--ink) 92%);
 }
 .pHeroIn {
   position: relative;

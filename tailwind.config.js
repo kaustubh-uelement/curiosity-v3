@@ -8,39 +8,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        orchid: "#5CAEFF", // Bright Sky
-        violet: "#1662CC", // Deep Sky
-        electric: "#1E7DFF", // Cerulean
-        "electric-deep": "#0A3B7A", // Twilight Blue
-        mist: "#CDE4FF", // Mist Blue
-        ink: "#010A16", // Ink Sky
-        "ink-2": "#021024", // Midnight
-        "ink-3": "#041A35", // Night Blue
-        tx: "#F0F7FF", // Cloud
-        "tx-2": "rgba(205,228,255,0.70)",
-        "tx-3": "rgba(151,201,255,0.45)",
-        line: "rgba(182,216,255,0.12)",
-        "line-2": "rgba(182,216,255,0.22)",
-        glass: "rgba(4,26,53,0.40)",
-        "glass-2": "rgba(6,41,86,0.50)",
+        orchid: "#417EF3", // Bright Blue (Primary Highlight & Kicker)
+        violet: "#5D17B7", // Deep Purple (Brand Core)
+        electric: "#417EF3", // Bright Blue (Brand Accent)
+        "electric-deep": "#2C64D6", // Mid-Deep Blue
+        mist: "#D8CEFD", // Mist Violet-Blue
+        ink: "#090418", // Cosmic Deep Ink Canvas
+        "ink-2": "#120928", // Elevated Surface
+        "ink-3": "#1C103C", // Glass / Tertiary Surface
+        tx: "#FAF8FF", // Primary Text
+        "tx-2": "rgba(235, 230, 255, 0.72)",
+        "tx-3": "rgba(180, 210, 255, 0.55)",
+        line: "rgba(65, 126, 243, 0.16)",
+        "line-2": "rgba(65, 126, 243, 0.30)",
+        glass: "rgba(18, 9, 40, 0.45)",
+        "glass-2": "rgba(28, 16, 60, 0.55)",
 
-        // Full 16-color Sky Blue Palette
-        cloud: "#F0F7FF",
-        "arctic-sky": "#E1F0FF",
-        "mist-blue": "#CDE4FF",
-        "light-sky": "#B6D8FF",
-        "clear-sky": "#97C9FF",
-        "day-sky": "#78BAFF",
-        "bright-sky": "#5CAEFF",
-        "pure-sky": "#3D9BFF",
-        cerulean: "#1E7DFF",
-        "deep-sky": "#1662CC",
-        azure: "#0F4FA3",
-        "twilight-blue": "#0A3B7A",
-        "evening-sky": "#062956",
-        "night-blue": "#041A35",
-        midnight: "#021024",
-        "ink-sky": "#010A16",
+        // Brand Named Tokens
+        "bright-blue": "#417EF3",
+        "deep-purple": "#5D17B7",
+        "light-purple": "#873CE6",
+        "royal-violet": "#4E4FD7",
+        "dark-purple": "#380A72",
+        "cosmic-ink": "#090418",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
@@ -72,8 +62,8 @@ module.exports = {
           "50%": { transform: "translate(6%,-9%) scale(1.16)" },
         },
         blip: {
-          "0%, 100%": { opacity: "1", boxShadow: "0 0 0 0 rgba(92,174,255,.55)" },
-          "50%": { opacity: ".5", boxShadow: "0 0 0 7px rgba(92,174,255,0)" },
+          "0%, 100%": { opacity: "1", boxShadow: "0 0 0 0 rgba(65,126,243,.55)" },
+          "50%": { opacity: ".5", boxShadow: "0 0 0 7px rgba(93,23,183,0)" },
         },
         slide: {
           from: { transform: "translateX(0)" },

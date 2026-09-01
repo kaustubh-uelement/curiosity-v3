@@ -143,11 +143,11 @@ export default function Flow({ className }) {
         <div
           onMouseEnter={() => setIsCoreHovered(true)}
           onMouseLeave={() => setIsCoreHovered(false)}
-          className="fCore relative z-20 flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl border border-white/30 bg-gradient-to-b from-electric via-violet to-ink-2 shadow-[0_0_60px_rgba(30,125,255,0.45)] transition-all duration-500 hover:shadow-[0_0_90px_rgba(92,174,255,0.6)] hover:scale-[1.03] overflow-hidden text-center cursor-default"
+          className="fCore relative z-20 flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl border border-white/30 bg-gradient-to-b from-electric via-violet to-ink-2 shadow-[0_0_60px_rgba(65,126,243,0.45)] transition-all duration-500 hover:shadow-[0_0_90px_rgba(135,60,230,0.6)] hover:scale-[1.03] overflow-hidden text-center cursor-default"
         >
           {/* Animated Background Rays */}
           <div
-            className="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_center,rgba(92,174,255,0.25)_0%,transparent_70%)] animate-pulseSlow"
+            className="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_center,rgba(65,126,243,0.25)_0%,transparent_70%)] animate-pulseSlow"
             aria-hidden="true"
           />
 

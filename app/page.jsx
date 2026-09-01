@@ -74,7 +74,7 @@ export default async function Home() {
         <div className="heroMountain" aria-hidden="true">
           <div className="heroMountainInner">
             <Image
-              src="/mountain.png"
+              src="/mountain.webp"
               alt=""
               fill
               priority
@@ -374,9 +374,9 @@ function DotViz({ index }) {
     >
       <defs>
         <linearGradient id="dotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#5CAEFF" />
-          <stop offset="50%" stopColor="#1662CC" />
-          <stop offset="100%" stopColor="#1E7DFF" />
+          <stop offset="0%" stopColor="#417EF3" />
+          <stop offset="50%" stopColor="#873CE6" />
+          <stop offset="100%" stopColor="#5D17B7" />
         </linearGradient>
       </defs>
       {dots}

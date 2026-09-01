@@ -4,7 +4,7 @@ const variantMap = {
   default:
     "badge inline-flex items-center gap-2 py-2 px-4 rounded-r-pill border border-line-2 bg-glass backdrop-blur-[20px] font-mono text-[11.5px] uppercase tracking-[0.1em] text-tx-2 shadow-sm",
   pill:
-    "pillTag inline-flex items-center py-3 px-5 rounded-r-pill text-sm text-tx-2 border border-line bg-glass backdrop-blur-[20px] transition-all duration-300 hover:border-line-2 hover:text-tx hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(92,174,255,0.15)] cursor-default select-none",
+    "pillTag inline-flex items-center py-3 px-5 rounded-r-pill text-sm text-tx-2 border border-line bg-glass backdrop-blur-[20px] transition-all duration-300 hover:border-line-2 hover:text-tx hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(65,126,243,0.2)] cursor-default select-none",
   spec:
     "inline-flex items-center font-mono text-[11px] text-tx-3 border border-line py-1.5 px-3 rounded-lg bg-white/[0.02] transition-colors duration-200 hover:text-tx-2 hover:border-line-2",
   kicker:

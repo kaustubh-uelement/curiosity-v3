@@ -2,12 +2,12 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const variantMap = {
-  primary: "btnP bg-mist text-ink hover:bg-cloud hover:shadow-[0_0_24px_rgba(205,228,255,0.30)]",
-  glass: "btnG border border-line-2 text-tx bg-glass backdrop-blur-[20px] hover:border-tx hover:bg-glass-2 hover:shadow-[0_0_20px_rgba(240,247,255,0.10)]",
-  electric: "btnE bg-electric text-white hover:bg-violet hover:shadow-[0_0_30px_rgba(30,125,255,0.4)]",
-  p: "btnP bg-mist text-ink hover:bg-cloud hover:shadow-[0_0_24px_rgba(205,228,255,0.30)]",
+  primary: "btnP bg-mist text-ink hover:bg-white hover:shadow-[0_0_24px_rgba(216,206,253,0.35)]",
+  glass: "btnG border border-line-2 text-tx bg-glass backdrop-blur-[20px] hover:border-tx hover:bg-glass-2 hover:shadow-[0_0_20px_rgba(250,248,255,0.10)]",
+  electric: "btnE bg-electric text-white hover:bg-violet hover:shadow-[0_0_30px_rgba(65,126,243,0.45)]",
+  p: "btnP bg-mist text-ink hover:bg-white hover:shadow-[0_0_24px_rgba(216,206,253,0.35)]",
   g: "btnG border border-line-2 text-tx bg-glass backdrop-blur-[20px] hover:border-tx hover:bg-glass-2",
-  e: "btnE bg-electric text-white hover:bg-violet hover:shadow-[0_0_30px_rgba(30,125,255,0.4)]",
+  e: "btnE bg-electric text-white hover:bg-violet hover:shadow-[0_0_30px_rgba(65,126,243,0.45)]",
 };
 
 const sizeMap = {

@@ -21,7 +21,7 @@ export default function Reveal({
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setShown(true);
       return;
     }
@@ -34,10 +34,19 @@ export default function Reveal({
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0, rootMargin: "0px 0px 50px 0px" }
     );
     obs.observe(node);
-    return () => obs.disconnect();
+
+    // Fallback timer ensures no section ever stays blank if scroll event is missed
+    const timer = setTimeout(() => {
+      setShown(true);
+    }, 1200);
+
+    return () => {
+      obs.disconnect();
+      clearTimeout(timer);
+    };
   }, []);
 
   const mergedStyle = delay
