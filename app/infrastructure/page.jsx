@@ -5,13 +5,18 @@ import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
+import Badge from "@/components/ui/Badge";
+import Button from "@/components/ui/Button";
 import { ROADMAP } from "@/lib/content";
+import { fetchActiveShowcases } from "@/lib/mainstay";
 
 export const metadata = {
   title: "AI Compute Infrastructure",
   description:
     "The 5MW to 100MW+ phased deployment roadmap for Curiosity AI compute infrastructure across AI Factories in India.",
 };
+
+export const dynamic = "force-dynamic";
 
 const WHY = [
   {
@@ -31,7 +36,9 @@ const WHY = [
   },
 ];
 
-export default function Infrastructure() {
+export default async function Infrastructure() {
+  const showcases = await fetchActiveShowcases();
+
   const phases = ROADMAP.map((r) => ({
     kicker: `${r.date} · ${r.mw}${r.unit}`,
     title: r.title,
@@ -100,6 +107,44 @@ export default function Infrastructure() {
           </Reveal>
         </Container>
       </section>
+
+      {/* ============ CMS DEPLOYMENT SHOWCASES ============ */}
+      {showcases && showcases.length > 0 && (
+        <section className="sec border-t border-line">
+          <Container>
+            <SectionHeader
+              kicker="Execution Proof"
+              title="Deployment Case Studies & Milestones"
+              subtitle="Real-world commissioning data, thermal engineering breakthroughs, and cluster handoffs."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {showcases.map((s) => (
+                <div
+                  key={s.id || s.tabTitle}
+                  className="rounded-2xl border border-line bg-white/[0.02] p-6 sm:p-8 backdrop-blur-md transition-all hover:border-orchid/40 flex flex-col justify-between"
+                >
+                  <div>
+                    <Badge variant="spec" className="mb-3">{s.tabTitle}</Badge>
+                    <h3 className="text-lg sm:text-xl font-medium text-white mb-4">{s.contentTitle}</h3>
+                    {s.points && s.points.length > 0 && (
+                      <ul className="space-y-2 text-xs sm:text-sm text-white/70 list-disc list-inside mb-6">
+                        {s.points.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  {s.ctaText && s.ctaUrl && (
+                    <Button href={s.ctaUrl} variant="glass" className="!px-4 !py-2 text-xs self-start">
+                      {s.ctaText}
+                    </Button>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       <Statement
         title="The GPU infrastructure behind"

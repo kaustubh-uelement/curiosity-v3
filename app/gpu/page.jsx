@@ -6,13 +6,16 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
-import { GPUS, WORKLOADS } from "@/lib/content";
+import { GPUS as FALLBACK_GPUS, WORKLOADS } from "@/lib/content";
+import { fetchActiveProductHighlights } from "@/lib/mainstay";
 
 export const metadata = {
   title: "GPU Infrastructure",
   description:
     "NVIDIA Blackwell B300 and GB300 SuperPOD clusters and AMD Instinct MI400 infrastructure for training, inference, frontier AI, generative AI and HPC.",
 };
+
+export const dynamic = "force-dynamic";
 
 const PHASE1 = [
   { n: 4, label: "SuperPOD clusters in Phase 1" },
@@ -21,7 +24,20 @@ const PHASE1 = [
   { n: 72, label: "Nodes per cluster · 8 GPU/node" },
 ];
 
-export default function Gpu() {
+export default async function Gpu() {
+  const products = await fetchActiveProductHighlights();
+
+  // If dynamic products exist in Mainstay, use them; otherwise fallback to default GPUS
+  const gpuCards =
+    products.length > 0
+      ? products.map((p) => ({
+          tag: p.label,
+          name: p.title,
+          body: p.description,
+          specs: p.highlights.map((h) => `${h.label}: ${h.value}`),
+        }))
+      : FALLBACK_GPUS;
+
   return (
     <>
       <PageHero
@@ -33,7 +49,7 @@ export default function Gpu() {
       <section className="secSm">
         <Container>
           <Reveal className="g3">
-            {GPUS.map((gpu) => (
+            {gpuCards.map((gpu) => (
               <Card
                 hoverable
                 key={gpu.name}
