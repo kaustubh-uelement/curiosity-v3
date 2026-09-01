@@ -6,12 +6,15 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 import { MARKET, SEGMENTS } from "@/lib/content";
+import { fetchActiveTestimonials } from "@/lib/mainstay";
 
 export const metadata = {
   title: "For Neo-Clouds & Enterprise",
   description:
     "Long-term GPU capacity for neo-clouds and enterprise AI: GPUaaS and bare metal, 3-5 year reservations, access to 5MW-100MW+ AI Factory infrastructure.",
 };
+
+export const dynamic = "force-dynamic";
 
 const BENEFITS = [
   {
@@ -36,7 +39,8 @@ const BENEFITS = [
   },
 ];
 
-export default function Customers() {
+export default async function Customers() {
+  const testimonials = await fetchActiveTestimonials();
   return (
     <>
       <PageHero
@@ -127,6 +131,36 @@ export default function Customers() {
           </Reveal>
         </Container>
       </section>
+
+      {/* ============ CMS TESTIMONIALS & PERSPECTIVES ============ */}
+      {testimonials && testimonials.length > 0 && (
+        <section className="sec border-t border-line">
+          <Container>
+            <SectionHeader
+              kicker="Perspectives"
+              title="What Partners & Customers Say"
+              subtitle="Endorsements from Tier-IV data centre operators, neo-cloud compute buyers, and infrastructure investors."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.map((t) => (
+                <div
+                  key={t.id || t.name}
+                  className="rounded-2xl border border-line bg-white/[0.02] p-6 sm:p-8 backdrop-blur-md transition-all hover:border-orchid/40 flex flex-col justify-between"
+                >
+                  <p className="text-sm sm:text-base text-white/80 leading-relaxed italic mb-6">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="pt-4 border-t border-white/10">
+                    <h4 className="text-base font-medium text-white">{t.name}</h4>
+                    <p className="text-xs text-orchid font-mono mt-0.5">{t.designation}</p>
+                    <p className="text-xs text-white/50">{t.company}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       <Statement
         title="Reserve dedicated"

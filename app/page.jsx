@@ -17,16 +17,32 @@ import TextLink from "@/components/ui/TextLink";
 import SectionHeader from "@/components/ui/SectionHeader";
 import {
   SITE,
-  ANNOUNCEMENT,
+  ANNOUNCEMENT as FALLBACK_ANNOUNCEMENT,
   PILLARS,
-  STACK,
+  STACK as FALLBACK_STACK,
   OPPORTUNITY,
   ROADMAP,
-  NEWS,
+  NEWS as FALLBACK_NEWS,
   FAQ,
 } from "@/lib/content";
+import {
+  fetchActiveBlogs,
+  fetchActivePartnerships,
+  fetchActiveSolutionHighlights,
+} from "@/lib/mainstay";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const [{ news, announcement }, partners, stack] = await Promise.all([
+    fetchActiveBlogs(),
+    fetchActivePartnerships(),
+    fetchActiveSolutionHighlights(),
+  ]);
+
+  const activeAnnouncement = announcement || FALLBACK_ANNOUNCEMENT;
+  const activeStack = stack && stack.length > 0 ? stack : FALLBACK_STACK;
+  const activeNews = news && news.length > 0 ? news : FALLBACK_NEWS;
   return (
     <>
       {/* ============ HERO ============ */}
@@ -58,7 +74,7 @@ export default function Home() {
         <div className="heroMountain" aria-hidden="true">
           <div className="heroMountainInner">
             <Image
-              src="/mountain.webp"
+              src="/mountain.png"
               alt=""
               fill
               priority
@@ -103,7 +119,7 @@ export default function Home() {
           <Reveal
             className="annc group relative overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(205,130,255,0.15)] hover:border-line-2 bg-black/40 border-white/20 backdrop-blur-md"
             as={Link}
-            href={ANNOUNCEMENT.href}
+            href={activeAnnouncement.href}
             style={{ marginTop: 40 }}
           >
             {/* Shimmer light-edge reflection */}
@@ -113,14 +129,14 @@ export default function Home() {
             />
             <span className="anncMeta flex flex-col gap-1.5 flex-none">
               <span className="k font-mono text-[10.5px] tracking-[0.16em] uppercase text-orchid font-semibold">
-                {ANNOUNCEMENT.kicker}
+                {activeAnnouncement.kicker}
               </span>
               <span className="d font-mono text-[11px] text-white/80">
-                {ANNOUNCEMENT.date}
+                {activeAnnouncement.date}
               </span>
             </span>
             <span className="t flex-1 min-w-0 sm:min-w-[200px] text-[15px] leading-snug text-white font-medium">
-              {ANNOUNCEMENT.title}
+              {activeAnnouncement.title}
             </span>
             <span className="arw flex-none text-white/80 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:text-white" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -142,7 +158,7 @@ export default function Home() {
         </Container>
       </header>
 
-      <Marquee />
+      <Marquee partners={partners} />
 
       {/* ============ PILLARS 01/02/03 ============ */}
       <section className="sec">
@@ -183,7 +199,7 @@ export default function Home() {
             title="The Stack for Scaling Compute"
             subtitle="Five layers that turn powered land into contracted, revenue-generating AI compute."
           />
-          <StackCards items={STACK} />
+          <StackCards items={activeStack} />
         </Container>
       </section>
 
@@ -272,8 +288,8 @@ export default function Home() {
             size="lg"
           />
           <Reveal className="newsGrid">
-            {NEWS.map((item) => (
-              <Link className="newsCard" href={item.href} key={item.title}>
+            {activeNews.map((item) => (
+              <Link className="newsCard" href={item.href || "#"} key={item.id || item.title}>
                 <div className="newsViz" />
                 <div className="newsBody">
                   <div className="newsMeta">

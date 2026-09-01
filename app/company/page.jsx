@@ -6,6 +6,7 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
+import { fetchActiveBlogs } from "@/lib/mainstay";
 
 export const metadata = {
   title: "Company",
@@ -40,7 +41,10 @@ const PILLARS = [
 
 const CREDS = ["Sydenham", "LSE", "Aston University", "Harvard Business School"];
 
-export default function Company() {
+export const dynamic = "force-dynamic";
+
+export default async function Company() {
+  const { news } = await fetchActiveBlogs();
   return (
     <>
       <PageHero
@@ -127,6 +131,36 @@ export default function Company() {
           </Reveal>
         </Container>
       </section>
+
+      {/* ============ CMS DEPLOYMENT UPDATES ============ */}
+      {news && news.length > 0 && (
+        <section className="sec border-t border-line">
+          <Container>
+            <SectionHeader
+              kicker="Deployments"
+              title="Platform & Infrastructure Updates"
+              subtitle="Latest releases, cluster commissioning milestones, and roadmap announcements directly from Mainstay CMS."
+            />
+            <div className="space-y-6">
+              {news.map((item) => (
+                <div
+                  id={item.slug}
+                  key={item.id || item.slug}
+                  className="rounded-2xl border border-line bg-white/[0.02] p-6 sm:p-8 backdrop-blur-md transition-all hover:border-orchid/40"
+                >
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <Badge variant="spec">{item.tag}</Badge>
+                    <span className="font-mono text-xs text-white/50">{item.date}</span>
+                    {item.isHero && <Badge variant="kicker-active">Featured</Badge>}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-medium text-white mb-2">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-white/70 leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       <Statement
         title="Partner with"
