@@ -2,7 +2,7 @@ export default function manifest() {
   return {
     name: "Curiosity AI",
     short_name: "Curiosity AI",
-    description: "Compute AI Infrastructure Platform for Abundant Intelligence",
+    description: "Compute AI Infrastructure for Abundant Intelligence",
     start_url: "/",
     display: "standalone",
     background_color: "#090418",

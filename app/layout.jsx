@@ -27,7 +27,8 @@ const fontMono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL("https://curiosityai.in"),
   title: {
-    default: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
+    default:
+      "Curiosity AI | Compute AI Infrastructure for Abundant Intelligence",
     template: "%s | Curiosity AI",
   },
   description:
@@ -54,16 +55,28 @@ export const metadata = {
     icon: [
       { url: "/curiosity-ai-icon-blue.png", type: "image/png" },
       { url: "/curiosity-ai-icon-blue.png", sizes: "32x32", type: "image/png" },
-      { url: "/curiosity-ai-icon-blue.png", sizes: "192x192", type: "image/png" },
-      { url: "/curiosity-ai-icon-blue.png", sizes: "512x512", type: "image/png" },
+      {
+        url: "/curiosity-ai-icon-blue.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/curiosity-ai-icon-blue.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     shortcut: ["/curiosity-ai-icon-blue.png"],
     apple: [
-      { url: "/curiosity-ai-icon-blue.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/curiosity-ai-icon-blue.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
   },
   openGraph: {
-    title: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
+    title: "Curiosity AI | Compute AI Infrastructure for Abundant Intelligence",
     description:
       "Bringing 5MW to 100MW+ of AI compute infrastructure online with AI Factories across India.",
     type: "website",
@@ -75,13 +88,13 @@ export const metadata = {
         url: "/curiosity-og-image.png",
         width: 1894,
         height: 826,
-        alt: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
+        alt: "Curiosity AI | Compute AI Infrastructure for Abundant Intelligence",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Curiosity AI | Compute AI Infrastructure Platform for Abundant Intelligence",
+    title: "Curiosity AI | Compute AI Infrastructure for Abundant Intelligence",
     description:
       "Bringing 5MW to 100MW+ of AI compute infrastructure online with AI Factories across India.",
     images: ["/curiosity-og-image.png"],
@@ -133,4 +146,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
