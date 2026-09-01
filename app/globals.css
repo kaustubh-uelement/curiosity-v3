@@ -130,7 +130,7 @@
    TYPE SCALE
    ========================================================================== */
 .dispHero {
-  font-size: clamp(36px, 8.5vw, 132px);
+  font-size: clamp(30px, 6.97vw, 108px);
   letter-spacing: -0.045em;
   line-height: 0.96;
   font-weight: 500;
@@ -774,7 +774,7 @@
   max-width: 20ch;
   text-align: right;
   margin-left: auto;
-  font-size: clamp(36px, 6.8vw, 104px);
+  font-size: clamp(30px, 5.58vw, 85px);
   line-height: 1.0;
 }
 
@@ -1819,7 +1819,7 @@
   }
   .heroH {
     max-width: 100%;
-    font-size: clamp(30px, 8.5vw, 46px);
+    font-size: clamp(27px, 7.65vw, 41px);
     line-height: 1.04;
   }
   .heroMountainInner {
