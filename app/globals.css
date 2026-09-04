@@ -1157,7 +1157,7 @@
 }
 .fCore {
   border-radius: var(--r-xl);
-  padding: 40px 24px;
+  padding: 20px 16px;
   text-align: center;
   background: linear-gradient(165deg, var(--electric), var(--violet));
   border: 1px solid rgba(255, 255, 255, .22);
@@ -1178,9 +1178,9 @@
   display: block;
 }
 .fRing {
-  width: 54px;
-  height: 54px;
-  margin: 0 auto 18px;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 10px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, .4);
   display: flex;
