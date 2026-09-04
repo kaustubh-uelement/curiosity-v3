@@ -75,7 +75,7 @@ export default function Contact() {
         <Container>
           <Reveal className="g2">
             <Card tag="Office" title="Vaswani Chambers">
-              <p>Worli, Mumbai, India</p>
+              <p>Worli, Mumbai, Maharashtra - INDIA</p>
             </Card>
             <Card tag="Deployment markets" title="Mumbai & Chennai">
               <p>Scaling to additional AI Factory sites through 2029, from 5MW toward 100MW+.</p>

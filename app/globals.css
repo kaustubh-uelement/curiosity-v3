@@ -1810,14 +1810,12 @@
   font-family: var(--font-mono), monospace;
   font-size: 11.5px;
   color: var(--tx-3);
-  padding-right: 56px;
 }
 @media (max-width: 600px) {
   .footCredit {
     order: 3;
     width: 100%;
     text-align: right;
-    padding-right: 48px;
   }
 }
 .footCreditLink {
@@ -1853,13 +1851,11 @@
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity .3s var(--ease), transform .3s var(--ease), color .2s, border-color .2s, background .2s;
+  transition: opacity .3s var(--ease), color .2s, border-color .2s, background .2s;
 }
 .backToTop--visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
 }
 .backToTop:hover {
   color: var(--tx-1);
