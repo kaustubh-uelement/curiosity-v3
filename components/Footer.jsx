@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "./Logo";
+import Image from "next/image";
 import Newsletter from "./Newsletter";
 import Container from "@/components/ui/Container";
 import { SITE, FOOTER_COLS } from "@/lib/content";
@@ -13,17 +13,6 @@ export default function Footer() {
         <Newsletter />
 
         <div className="footGrid" style={{ paddingTop: 44 }}>
-          <div className="footBrand">
-            <Link
-              className="logo group transition-opacity hover:opacity-90 inline-flex items-center"
-              href="/"
-              aria-label="Curiosity AI, Home"
-            >
-              <Logo variant="blue" className="h-6 w-auto" />
-            </Link>
-            <p>{SITE.tagline}</p>
-          </div>
-
           {FOOTER_COLS.map((col) => (
             <div className="footCol" key={col.title}>
               <h4>{col.title}</h4>
@@ -67,6 +56,18 @@ export default function Footer() {
               UElement STamBH
             </a>
           </span>
+        </div>
+
+        {/* Brand Watermark Backdrop */}
+        <div className="footWatermark" aria-hidden="true">
+          <div className="footWatermarkGlow" />
+          <Image
+            src="/curiosity-ai-white-logo.png"
+            alt=""
+            width={3400}
+            height={400}
+            className="footWatermarkImg"
+          />
         </div>
       </Container>
     </footer>
