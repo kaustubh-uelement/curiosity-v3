@@ -9,7 +9,19 @@ export default function Footer() {
 
   return (
     <footer className="foot">
-      <Container>
+      {/* Background Watermark Logo & Glow Layer (behind footer content) */}
+      <div className="footWatermark" aria-hidden="true">
+        <div className="footWatermarkGlow" />
+        <Image
+          src="/curiosity-ai-white-logo.png"
+          alt=""
+          width={3400}
+          height={400}
+          className="footWatermarkImg"
+        />
+      </div>
+
+      <Container className="relative z-10">
         <Newsletter />
 
         <div className="footGrid" style={{ paddingTop: 44 }}>
@@ -56,18 +68,6 @@ export default function Footer() {
               UElement STamBH
             </a>
           </span>
-        </div>
-
-        {/* Brand Watermark Backdrop */}
-        <div className="footWatermark" aria-hidden="true">
-          <div className="footWatermarkGlow" />
-          <Image
-            src="/curiosity-ai-white-logo.png"
-            alt=""
-            width={3400}
-            height={400}
-            className="footWatermarkImg"
-          />
         </div>
       </Container>
     </footer>
