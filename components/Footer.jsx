@@ -57,24 +57,16 @@ export default function Footer() {
         <div className="footBtm">
           <span>© {currentYear} Curiosity AI. All rights reserved.</span>
           <span className="footCredit">
-            Developed by Uelement Technologies Private Limited
-          </span>
-          <a className="toTop" href="#top" aria-label="Back to top of page">
-            Back to top
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              aria-hidden="true"
+            Built on{" "}
+            <a
+              href="https://uelement.in/stambh/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footCreditLink"
             >
-              <path
-                d="M6 10V2M6 2L2.5 5.5M6 2l3.5 3.5"
-                stroke="currentColor"
-                strokeWidth="1.3"
-              />
-            </svg>
-          </a>
+              UElement STamBH
+            </a>
+          </span>
         </div>
       </Container>
     </footer>

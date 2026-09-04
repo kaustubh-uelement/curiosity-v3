@@ -2,6 +2,7 @@ import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const fontDisplay = Space_Grotesk({
   subsets: ["latin"],
@@ -152,6 +153,7 @@ export default function RootLayout({ children }) {
         <Nav />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
