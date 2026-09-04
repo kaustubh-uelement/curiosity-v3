@@ -28,18 +28,18 @@ const PHASE1 = [
 function getProductImage(title = "", index = 0) {
   const t = (title || "").toLowerCase();
   if (t.includes("b300") && !t.includes("gb300")) {
-    return "/products/nvidia-blackwell-b300.jpg";
+    return "/products/nvidia-blackwell-b300.png";
   }
   if (t.includes("gb300") || t.includes("nvl72")) {
-    return "/products/nvidia-gb300-nvl72.jpg";
+    return "/products/nvidia-gb300-nvl72.png";
   }
   if (t.includes("amd") || t.includes("mi325") || t.includes("mi400") || t.includes("instinct")) {
-    return "/products/amd-instinct-mi325x.jpg";
+    return "/products/amd-instinct-mi325x.png";
   }
   const fallbackImages = [
-    "/products/nvidia-blackwell-b300.jpg",
-    "/products/nvidia-gb300-nvl72.jpg",
-    "/products/amd-instinct-mi325x.jpg",
+    "/products/nvidia-blackwell-b300.png",
+    "/products/nvidia-gb300-nvl72.png",
+    "/products/amd-instinct-mi325x.png",
   ];
   return fallbackImages[index % fallbackImages.length];
 }
