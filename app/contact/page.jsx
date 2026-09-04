@@ -75,7 +75,14 @@ export default function Contact() {
         <Container>
           <Reveal className="g2">
             <Card tag="Office" title="Vaswani Chambers">
-              <p>Worli, Mumbai, Maharashtra - INDIA</p>
+              <p className="font-medium text-white mb-1">Curiosity AI Private Limited</p>
+              <p>
+                Floor 2, Plot 264/265, Vaswani Chambers,
+                <br />
+                Worli Colony, Mumbai 400030,
+                <br />
+                Maharashtra, India
+              </p>
             </Card>
             <Card tag="Deployment markets" title="Mumbai & Chennai">
               <p>Scaling to additional AI Factory sites through 2029, from 5MW toward 100MW+.</p>

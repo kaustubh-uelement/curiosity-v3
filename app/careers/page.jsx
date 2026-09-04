@@ -92,7 +92,7 @@ export default async function Careers() {
         title="Ready to build"
         highlight="at megawatt scale?"
         body="If you don't see an exact opening that matches your background but have deep experience in data centres or GPU clusters, send us your profile."
-        primary={{ href: "mailto:careers@curiosityai.in", label: "Email Recruiting" }}
+        primary={{ href: "mailto:punit@curiosityai.co", label: "Email Recruiting" }}
         secondary={{ href: "/contact", label: "Contact Deployment Team" }}
       />
     </>

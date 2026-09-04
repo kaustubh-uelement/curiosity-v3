@@ -154,11 +154,19 @@ export default function Nav() {
           <div className="ovFoot">
             <a
               className="hover:text-orchid transition-colors"
-              href={`mailto:${SITE.email.deploy}`}
+              href={`mailto:${SITE.email.primary}`}
             >
-              {SITE.email.deploy}
+              {SITE.email.primary}
             </a>
-            <span>{SITE.address}</span>
+            <span>
+              Curiosity AI Private Limited
+              <br />
+              Floor 2, Plot 264/265, Vaswani Chambers,
+              <br />
+              Worli Colony, Mumbai 400030,
+              <br />
+              Maharashtra, India
+            </span>
           </div>
         </div>
       </div>

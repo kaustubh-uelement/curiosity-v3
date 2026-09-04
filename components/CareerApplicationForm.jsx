@@ -43,7 +43,7 @@ export default function CareerApplicationForm({ job, onCancel, onSuccess }) {
       console.error("Career application error:", err);
       setStatus("error");
       setErrorMessage(
-        err.message || "Failed to submit application. Please try again or email careers@curiosityai.in."
+        err.message || "Failed to submit application. Please try again or email punit@curiosityai.co."
       );
     }
   };

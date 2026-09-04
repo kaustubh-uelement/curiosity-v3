@@ -38,19 +38,23 @@ export default function Footer() {
 
           <div className="footCol">
             <h4>Get in touch</h4>
-            <a href={`mailto:${SITE.email.deploy}`}>{SITE.email.deploy}</a>
-            <a href={`mailto:${SITE.email.factories}`}>
-              {SITE.email.factories}
-            </a>
+            <a href={`mailto:${SITE.email.primary}`}>{SITE.email.primary}</a>
             <span
               style={{
                 display: "block",
                 color: "var(--tx-3)",
                 fontSize: 13.5,
-                marginTop: 4,
+                marginTop: 8,
+                lineHeight: 1.55,
               }}
             >
-              {SITE.address}
+              Curiosity AI Private Limited
+              <br />
+              Floor 2, Plot 264/265,
+              <br />
+              Vaswani Chambers, Worli Colony,
+              <br />
+              Mumbai 400030, Maharashtra, India
             </span>
           </div>
         </div>
