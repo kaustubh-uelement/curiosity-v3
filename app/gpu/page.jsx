@@ -24,16 +24,37 @@ const PHASE1 = [
   { n: 72, label: "Nodes per cluster · 8 GPU/node" },
 ];
 
+// Helper function to resolve product image based on product title or index
+function getProductImage(title = "", index = 0) {
+  const t = (title || "").toLowerCase();
+  if (t.includes("b300") && !t.includes("gb300")) {
+    return "/products/nvidia-blackwell-b300.jpg";
+  }
+  if (t.includes("gb300") || t.includes("nvl72")) {
+    return "/products/nvidia-gb300-nvl72.jpg";
+  }
+  if (t.includes("amd") || t.includes("mi325") || t.includes("mi400") || t.includes("instinct")) {
+    return "/products/amd-instinct-mi325x.jpg";
+  }
+  const fallbackImages = [
+    "/products/nvidia-blackwell-b300.jpg",
+    "/products/nvidia-gb300-nvl72.jpg",
+    "/products/amd-instinct-mi325x.jpg",
+  ];
+  return fallbackImages[index % fallbackImages.length];
+}
+
 export default async function Gpu() {
   const products = await fetchActiveProductHighlights();
 
   // If dynamic products exist in Mainstay, use them; otherwise fallback to default GPUS
   const gpuCards =
     products.length > 0
-      ? products.map((p) => ({
+      ? products.map((p, idx) => ({
           tag: p.label,
           name: p.title,
           body: p.description,
+          image: p.image || getProductImage(p.title, idx),
           specs: p.highlights.map((h) => `${h.label}: ${h.value}`),
         }))
       : FALLBACK_GPUS;
@@ -53,6 +74,7 @@ export default async function Gpu() {
               <Card
                 hoverable
                 key={gpu.name}
+                image={gpu.image}
                 tag={gpu.tag}
                 title={gpu.name}
                 description={gpu.body}

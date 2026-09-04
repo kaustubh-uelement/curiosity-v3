@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
@@ -10,6 +11,7 @@ import { cn } from "@/lib/utils";
 export default function Card({
   children,
   hoverable = false,
+  image,
   tag,
   number,
   title,
@@ -70,6 +72,18 @@ export default function Card({
 
       {/* Card contents */}
       <div className="relative z-10 flex flex-col gap-3.5 h-full">
+        {image && (
+          <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl bg-ink-2/90 border border-white/[0.08] mb-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
+            <Image
+              src={typeof image === "string" ? image : image.src}
+              alt={typeof image === "string" ? title || "Hardware Product" : image.alt || title || "Hardware Product"}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+              className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+          </div>
+        )}
         {number != null && (
           <div className="cNum select-none font-display font-medium text-white/15 transition-colors duration-300 group-hover:text-white/25">
             {number}
