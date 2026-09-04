@@ -1733,6 +1733,21 @@
   font-size: 11.5px;
   color: var(--tx-3);
 }
+.footCredit {
+  font-family: var(--font-mono), monospace;
+  font-size: 11.5px;
+  color: var(--tx-3);
+  margin-inline: auto;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .footCredit {
+    order: 3;
+    width: 100%;
+    margin-inline: 0;
+    text-align: center;
+  }
+}
 .toTop {
   display: inline-flex;
   align-items: center;
