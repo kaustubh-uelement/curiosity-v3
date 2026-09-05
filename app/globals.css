@@ -920,7 +920,7 @@
   font-size: 10.5px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--tx-3);
+  color: rgba(255, 255, 255, 0.85);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -941,8 +941,12 @@
 }
 .dashCell .n {
   font-size: 12.5px;
-  color: var(--tx-3);
+  color: rgba(255, 255, 255, 0.75);
   margin-top: 10px;
+  transition: color 0.3s;
+}
+.dashCell:hover .n {
+  color: #ffffff;
 }
 .dot {
   width: 7px;

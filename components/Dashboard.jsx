@@ -4,10 +4,15 @@ import { cn } from "@/lib/utils";
 
 export default function Dashboard({ className }) {
   return (
-    <div className={cn("dash rounded-2xl border border-line/60 bg-white/[0.015] backdrop-blur-md overflow-hidden", className)}>
+    <div
+      className={cn(
+        "dash rounded-2xl border border-line/60 bg-black/5 backdrop-blur-md overflow-hidden",
+        className
+      )}
+    >
       {DASHBOARD.map((item) => (
         <div
-          className="dashCell group relative p-6 sm:p-8 transition-colors duration-300 hover:bg-white/[0.03]"
+          className="dashCell group relative p-6 sm:p-8 transition-colors duration-300 hover:bg-white/[0.04]"
           key={item.label}
         >
           {/* Top border highlight on cell hover */}
@@ -16,7 +21,7 @@ export default function Dashboard({ className }) {
             aria-hidden="true"
           />
 
-          <div className="l flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-tx-3">
+          <div className="l flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-white/85">
             {item.live ? (
               <span className="relative flex h-2.5 w-2.5 items-center justify-center">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orchid opacity-75" />
@@ -33,7 +38,7 @@ export default function Dashboard({ className }) {
               </span>
             ) : null}
           </div>
-          <div className="n text-[12.5px] text-tx-3 mt-2.5 transition-colors group-hover:text-tx-2">
+          <div className="n text-[12.5px] text-white/75 mt-2.5 transition-colors group-hover:text-white">
             {item.note}
           </div>
         </div>
