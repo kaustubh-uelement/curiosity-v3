@@ -16,7 +16,9 @@ async function login() {
   }
 
   const data = await res.json();
-  console.log(`[Cloud Seed] Authenticated as ${data.user.email} (Tenant: ${data.user.tenantId})`);
+  console.log(
+    `[Cloud Seed] Authenticated as ${data.user.email} (Tenant: ${data.user.tenantId})`,
+  );
   return data.accessToken;
 }
 
@@ -36,7 +38,12 @@ async function seedCareers(token) {
         "Coordinate with power utilities and Tier-IV data centre operators.",
         "Design liquid-cooling topologies and high-density rack power distribution.",
       ],
-      requiredSkills: ["High-Density Power", "PUE Optimization", "Tier-IV Topology", "HVAC / CDU"],
+      requiredSkills: [
+        "High-Density Power",
+        "PUE Optimization",
+        "Tier-IV Topology",
+        "HVAC / CDU",
+      ],
       order: 1,
     },
     {
@@ -52,7 +59,11 @@ async function seedCareers(token) {
         "Manage substation approvals and grid compliance.",
         "Optimize energy efficiency and power factor for sustained AI training loads.",
       ],
-      requiredSkills: ["Medium Voltage Substations", "UPS Architecture", "Grid Interconnection"],
+      requiredSkills: [
+        "Medium Voltage Substations",
+        "UPS Architecture",
+        "Grid Interconnection",
+      ],
       order: 2,
     },
     {
@@ -68,7 +79,11 @@ async function seedCareers(token) {
         "Tune congestion control (PFC, ECN) for distributed LLM training.",
         "Monitor optical transceivers, link error rates, and fabric telemetry.",
       ],
-      requiredSkills: ["InfiniBand Quantum-2", "RoCEv2 / Spectrum-X", "Rail-Optimized Topologies"],
+      requiredSkills: [
+        "InfiniBand Quantum-2",
+        "RoCEv2 / Spectrum-X",
+        "Rail-Optimized Topologies",
+      ],
       order: 3,
     },
     {
@@ -84,7 +99,11 @@ async function seedCareers(token) {
         "Execute NCCL all-reduce and GPU burn-in benchmark suites.",
         "Coordinate fast-track handover to neo-cloud customer workloads.",
       ],
-      requiredSkills: ["NVIDIA NCCL Benchmarking", "Linux Kernel / CUDA", "Hardware Burn-in"],
+      requiredSkills: [
+        "NVIDIA NCCL Benchmarking",
+        "Linux Kernel / CUDA",
+        "Hardware Burn-in",
+      ],
       order: 4,
     },
   ];
@@ -137,18 +156,20 @@ async function seedCareers(token) {
 }
 
 async function seedProductHighlights(token) {
-  console.log("\n[Cloud Seed] Seeding Product Highlights (GPU Configurations)...");
+  console.log(
+    "\n[Cloud Seed] Seeding Product Highlights (GPU Configurations)...",
+  );
   const products = [
     {
       label: "Flagship Training",
       title: "NVIDIA Blackwell B300 SuperPOD",
       description:
-        "5MW air-cooled cluster architecture featuring fifth-generation Tensor Cores and 3.2 Tbps Quantum-2 InfiniBand for trillion-parameter frontier training.",
+        "5MW air-cooled cluster architecture featuring fifth-generation Tensor Cores and 3.2 Tbps Quantum-X800 InfiniBand for trillion-parameter frontier training.",
       highlights: [
         { label: "Architecture", value: "NVIDIA Blackwell" },
         { label: "Memory", value: "288GB HBM3e / GPU" },
-        { label: "Interconnect", value: "3.2 Tbps NVLink 5 + InfiniBand" },
-        { label: "Cooling Model", value: "Air-Cooled Tier-IV Ready" },
+        { label: "Interconnect", value: "3.2 Tbps Quantum-X800 InfiniBand" },
+        { label: "Availability", value: "Q1 CY2027" },
       ],
       ctas: [{ label: "Reserve 5MW Capacity", url: "/contact" }],
       order: 1,
@@ -160,23 +181,23 @@ async function seedProductHighlights(token) {
         "10MW liquid-cooled compute pods with direct-to-chip CDU loops, delivering maximum computational density per square foot with ultra-low PUE.",
       highlights: [
         { label: "Architecture", value: "Grace Blackwell GB300" },
-        { label: "Pod Density", value: "72 GPUs / Liquid-Cooled Rack" },
-        { label: "PUE Efficiency", value: "< 1.22 PUE" },
-        { label: "Cooling Model", value: "Direct-to-Chip Liquid Cooling" },
+        { label: "Density", value: "72 GPUs / Liquid-Cooled Rack" },
+        { label: "Fabric", value: "130 TB/s NVLink 5 (< 1.22 PUE)" },
+        { label: "Availability", value: "Q2 CY2027" },
       ],
       ctas: [{ label: "Reserve 10MW Capacity", url: "/contact" }],
       order: 2,
     },
     {
       label: "Open Sovereign Compute",
-      title: "AMD Instinct MI325X Cluster",
+      title: "AMD Instinct MI400 Series",
       description:
         "High-bandwidth open compute platform engineered for massive memory capacity, large context windows, and cost-effective enterprise inference.",
       highlights: [
-        { label: "Architecture", value: "AMD CDNA 3" },
-        { label: "Memory", value: "256GB HBM3e (6 TB/s)" },
-        { label: "Fabric", value: "UltraScale Spectrum-X RoCE" },
-        { label: "Software Stack", value: "ROCm 6.0 Open Ecosystem" },
+        { label: "Architecture", value: "AMD CDNA 4" },
+        { label: "Memory", value: "Next-Gen High-Bandwidth HBM" },
+        { label: "Fabric", value: "Ultra Ethernet Consortium (UEC)" },
+        { label: "Availability", value: "Phase 3 Roadmap" },
       ],
       ctas: [{ label: "Explore AMD Fleet", url: "/contact" }],
       order: 3,
@@ -245,7 +266,8 @@ async function seedShowcases(token) {
     {
       section: "customers",
       tab_title: "Neo-Cloud Offtake",
-      content_title: "Global Demand Translation: 100% Contracted Sovereign Capacity",
+      content_title:
+        "Global Demand Translation: 100% Contracted Sovereign Capacity",
       content_points: [
         "Aggregates long-term US and global neo-cloud GPU reservations.",
         "Delivers dedicated bare-metal clusters with SLA guarantees over 99.95%.",
@@ -353,7 +375,9 @@ async function run() {
     await seedProductHighlights(token);
     await seedShowcases(token);
     await seedTestimonials(token);
-    console.log("\n🎉 All 4 new services successfully seeded on Cloud Mainstay CMS!");
+    console.log(
+      "\n🎉 All 4 new services successfully seeded on Cloud CMS!",
+    );
   } catch (err) {
     console.error("❌ Seeding failed:", err.message);
     process.exit(1);

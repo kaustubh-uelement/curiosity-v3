@@ -218,7 +218,7 @@ async function run() {
     await seedBlogs(token);
     await seedPartnerships(token);
     await seedSolutionHighlights(token);
-    console.log("\n🎉 All content successfully added to deployed Mainstay CMS!");
+    console.log("\n🎉 All content successfully added to deployed CMS!");
   } catch (err) {
     console.error("❌ Seeding failed:", err.message);
     process.exit(1);

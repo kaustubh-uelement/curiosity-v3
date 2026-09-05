@@ -132,14 +132,14 @@ export default async function Company() {
         </Container>
       </section>
 
-      {/* ============ CMS DEPLOYMENT UPDATES ============ */}
+      {/* ============ DEPLOYMENT UPDATES ============ */}
       {news && news.length > 0 && (
         <section className="sec border-t border-line">
           <Container>
             <SectionHeader
               kicker="Deployments"
               title="Platform & Infrastructure Updates"
-              subtitle="Latest releases, cluster commissioning milestones, and roadmap announcements directly from Mainstay CMS."
+              subtitle="Latest releases, cluster commissioning milestones, and roadmap announcements across our AI infrastructure platform."
             />
             <div className="space-y-6">
               {news.map((item) => (

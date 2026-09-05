@@ -33,13 +33,16 @@ function getProductImage(title = "", index = 0) {
   if (t.includes("gb300") || t.includes("nvl72")) {
     return "/products/nvidia-gb300-nvl72.png";
   }
-  if (t.includes("amd") || t.includes("mi325") || t.includes("mi400") || t.includes("instinct")) {
+  if (t.includes("mi400")) {
+    return "/products/amd-instinct-mi400.png";
+  }
+  if (t.includes("amd") || t.includes("mi325") || t.includes("instinct")) {
     return "/products/amd-instinct-mi325x.png";
   }
   const fallbackImages = [
     "/products/nvidia-blackwell-b300.png",
     "/products/nvidia-gb300-nvl72.png",
-    "/products/amd-instinct-mi325x.png",
+    "/products/amd-instinct-mi400.png",
   ];
   return fallbackImages[index % fallbackImages.length];
 }
@@ -47,7 +50,7 @@ function getProductImage(title = "", index = 0) {
 export default async function Gpu() {
   const products = await fetchActiveProductHighlights();
 
-  // If dynamic products exist in Mainstay, use them; otherwise fallback to default GPUS
+  // If dynamic products exist in CMS, use them; otherwise fallback to default GPUS
   const gpuCards =
     products.length > 0
       ? products.map((p, idx) => ({

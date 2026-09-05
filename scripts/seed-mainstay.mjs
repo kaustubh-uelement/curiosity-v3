@@ -218,7 +218,7 @@ async function run() {
     await seedBlogs(token);
     await seedPartnerships(token);
     await seedSolutionHighlights(token);
-    console.log("\n✅ Mainstay CMS Seeding Complete for tenant 'curiosity-ai'!");
+    console.log("\n✅ CMS Seeding Complete for tenant 'curiosity-ai'!");
   } catch (err) {
     console.error("❌ Seeding failed:", err.message);
     process.exit(1);

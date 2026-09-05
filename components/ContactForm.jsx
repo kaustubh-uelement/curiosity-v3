@@ -76,7 +76,6 @@ export default function ContactForm() {
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-2">
           <Badge variant="kicker">Direct Connection</Badge>
-          <Badge variant="default" className="text-white/70">Mainstay CMS Lead API</Badge>
         </div>
         <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-white">
           Send a Deployment Request
