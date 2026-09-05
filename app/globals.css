@@ -634,7 +634,7 @@
 .heroMountain {
   position: absolute;
   inset: 0;
-  z-index: 3;
+  z-index: 2;
   pointer-events: none;
   overflow: hidden;
   max-width: 100vw;
@@ -768,7 +768,7 @@
 }
 .heroTitleContainer {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   width: 100%;
 }
 .heroTop {
@@ -1815,7 +1815,7 @@
   .footCredit {
     order: 3;
     width: 100%;
-    text-align: right;
+    text-align: left;
   }
 }
 .footCreditLink {

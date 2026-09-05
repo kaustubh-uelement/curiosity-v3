@@ -50,7 +50,24 @@ export default async function Home() {
         {/* Layer 1: Galaxy sky gradient, rotating stars, and atmospheric fade */}
         <SkyAnimation />
 
-        {/* Layer 2: Hero title (behind mountain, above color gradient & stars) */}
+        {/* Layer 2: Mountain silhouette & dark fade */}
+        <div className="heroMountain" aria-hidden="true">
+          <div className="heroMountainInner">
+            <Image
+              src="/mountain.webp"
+              alt=""
+              fill
+              priority
+              loading="eager"
+              fetchPriority="high"
+              quality={100}
+              unoptimized
+              className="heroMountainImg"
+            />
+          </div>
+        </div>
+
+        {/* Layer 3: Hero title (over mountain) */}
         <Container className="heroTitleContainer pointer-events-none">
           <div className="heroTop" />
 
@@ -69,23 +86,6 @@ export default async function Home() {
             </h1>
           </div>
         </Container>
-
-        {/* Layer 3: Mountain silhouette & dark fade */}
-        <div className="heroMountain" aria-hidden="true">
-          <div className="heroMountainInner">
-            <Image
-              src="/mountain.webp"
-              alt=""
-              fill
-              priority
-              loading="eager"
-              fetchPriority="high"
-              quality={100}
-              unoptimized
-              className="heroMountainImg"
-            />
-          </div>
-        </div>
 
         {/* Layer 4: Interactive Hero Content & Live Dashboard */}
         <Container className="heroIn">
