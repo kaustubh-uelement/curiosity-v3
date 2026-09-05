@@ -7,16 +7,13 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
-import { ROADMAP } from "@/lib/content";
-import { fetchActiveShowcases } from "@/lib/mainstay";
+import { ROADMAP, SHOWCASES } from "@/lib/content";
 
 export const metadata = {
   title: "AI Compute Infrastructure",
   description:
     "The 5MW to 100MW+ phased deployment roadmap for Curiosity AI compute infrastructure across AI Factories in India.",
 };
-
-export const dynamic = "force-dynamic";
 
 const WHY = [
   {
@@ -36,8 +33,8 @@ const WHY = [
   },
 ];
 
-export default async function Infrastructure() {
-  const showcases = await fetchActiveShowcases();
+export default function Infrastructure() {
+  const showcases = SHOWCASES;
 
   const phases = ROADMAP.map((r) => ({
     kicker: `${r.date} · ${r.mw}${r.unit}`,
@@ -108,7 +105,7 @@ export default async function Infrastructure() {
         </Container>
       </section>
 
-      {/* ============ CMS DEPLOYMENT SHOWCASES ============ */}
+      {/* ============ DEPLOYMENT SHOWCASES ============ */}
       {showcases && showcases.length > 0 && (
         <section className="sec border-t border-line">
           <Container>

@@ -5,16 +5,13 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
-import { MARKET, SEGMENTS } from "@/lib/content";
-import { fetchActiveTestimonials } from "@/lib/mainstay";
+import { MARKET, SEGMENTS, TESTIMONIALS } from "@/lib/content";
 
 export const metadata = {
   title: "For Neo-Clouds & Enterprise",
   description:
     "Long-term GPU capacity for neo-clouds and enterprise AI: GPUaaS and bare metal, 3-5 year reservations, access to 5MW-100MW+ AI Factory infrastructure.",
 };
-
-export const dynamic = "force-dynamic";
 
 const BENEFITS = [
   {
@@ -39,8 +36,8 @@ const BENEFITS = [
   },
 ];
 
-export default async function Customers() {
-  const testimonials = await fetchActiveTestimonials();
+export default function Customers() {
+  const testimonials = TESTIMONIALS;
   return (
     <>
       <PageHero
@@ -132,7 +129,7 @@ export default async function Customers() {
         </Container>
       </section>
 
-      {/* ============ CMS TESTIMONIALS & PERSPECTIVES ============ */}
+      {/* ============ TESTIMONIALS & PERSPECTIVES ============ */}
       {/* {testimonials && testimonials.length > 0 && (
         <section className="sec border-t border-line">
           <Container>

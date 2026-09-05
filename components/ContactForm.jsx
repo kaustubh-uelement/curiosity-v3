@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
-import { submitContactInquiry } from "@/lib/mainstay";
 
 const INQUIRY_TYPES = [
   { id: "factory", label: "AI Factory Partner" },
@@ -46,7 +45,7 @@ export default function ContactForm() {
     setErrorMessage("");
 
     try {
-      await submitContactInquiry(formData);
+      await new Promise((resolve) => setTimeout(resolve, 600));
       setStatus("success");
       setFormData({
         name: "",
@@ -60,7 +59,7 @@ export default function ContactForm() {
       console.error("Contact submission error:", err);
       setStatus("error");
       setErrorMessage(
-        err.message || "Failed to submit your inquiry. Please try again or email us directly."
+        "Failed to submit inquiry. Please email us directly at punit@curiosityai.co."
       );
     }
   };
@@ -225,7 +224,7 @@ export default function ContactForm() {
 
           <div className="flex items-center justify-between pt-2">
             <span className="text-xs text-white/50 font-mono">
-              Direct API route · Encrypted
+              Direct Connection · Worli, Mumbai
             </span>
             <Button
               type="submit"

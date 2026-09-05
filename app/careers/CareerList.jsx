@@ -3,10 +3,8 @@
 import { useState } from "react";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
-import CareerApplicationForm from "@/components/CareerApplicationForm";
 
 export default function CareerList({ initialCareers = [] }) {
-  const [selectedJob, setSelectedJob] = useState(null);
   const [filterDept, setFilterDept] = useState("all");
 
   const departments = [
@@ -41,21 +39,6 @@ export default function CareerList({ initialCareers = [] }) {
         </div>
       )}
 
-      {/* Application Modal / Focus View */}
-      {selectedJob && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-          <div className="max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <CareerApplicationForm
-              job={selectedJob}
-              onCancel={() => setSelectedJob(null)}
-              onSuccess={() => {
-                setTimeout(() => setSelectedJob(null), 3000);
-              }}
-            />
-          </div>
-        </div>
-      )}
-
       {/* Job Cards Grid */}
       {filteredCareers.length === 0 ? (
         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-12 text-center">
@@ -80,9 +63,8 @@ export default function CareerList({ initialCareers = [] }) {
                   </h3>
                 </div>
                 <Button
-                  type="button"
+                  href={`mailto:punit@curiosityai.co?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
                   variant="primary"
-                  onClick={() => setSelectedJob(job)}
                   className="self-start sm:self-auto !px-5 !py-2 text-xs flex-none"
                 >
                   Apply for Role

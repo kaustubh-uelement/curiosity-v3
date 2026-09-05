@@ -6,7 +6,7 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
-import { fetchActiveBlogs } from "@/lib/mainstay";
+import { NEWS } from "@/lib/content";
 
 export const metadata = {
   title: "Company",
@@ -41,10 +41,8 @@ const PILLARS = [
 
 const CREDS = ["Sydenham", "LSE", "Aston University", "Harvard Business School"];
 
-export const dynamic = "force-dynamic";
-
-export default async function Company() {
-  const { news } = await fetchActiveBlogs();
+export default function Company() {
+  const news = NEWS;
   return (
     <>
       <PageHero
@@ -144,8 +142,7 @@ export default async function Company() {
             <div className="space-y-6">
               {news.map((item) => (
                 <div
-                  id={item.slug}
-                  key={item.id || item.slug}
+                  key={item.title}
                   className="rounded-2xl border border-line bg-white/[0.02] p-6 sm:p-8 backdrop-blur-md transition-all hover:border-orchid/40"
                 >
                   <div className="flex flex-wrap items-center gap-3 mb-3">

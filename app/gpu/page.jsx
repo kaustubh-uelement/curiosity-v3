@@ -6,16 +6,13 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
-import { GPUS as FALLBACK_GPUS, WORKLOADS } from "@/lib/content";
-import { fetchActiveProductHighlights } from "@/lib/mainstay";
+import { GPUS, WORKLOADS } from "@/lib/content";
 
 export const metadata = {
   title: "GPU Infrastructure",
   description:
     "NVIDIA Blackwell B300 and GB300 SuperPOD clusters and AMD Instinct MI400 infrastructure for training, inference, frontier AI, generative AI and HPC.",
 };
-
-export const dynamic = "force-dynamic";
 
 const PHASE1 = [
   { n: 4, label: "SuperPOD clusters in Phase 1" },
@@ -24,43 +21,8 @@ const PHASE1 = [
   { n: 72, label: "Nodes per cluster · 8 GPU/node" },
 ];
 
-// Helper function to resolve product image based on product title or index
-function getProductImage(title = "", index = 0) {
-  const t = (title || "").toLowerCase();
-  if (t.includes("b300") && !t.includes("gb300")) {
-    return "/products/nvidia-blackwell-b300.png";
-  }
-  if (t.includes("gb300") || t.includes("nvl72")) {
-    return "/products/nvidia-gb300-nvl72.png";
-  }
-  if (t.includes("mi400")) {
-    return "/products/amd-instinct-mi400.png";
-  }
-  if (t.includes("amd") || t.includes("mi325") || t.includes("instinct")) {
-    return "/products/amd-instinct-mi325x.png";
-  }
-  const fallbackImages = [
-    "/products/nvidia-blackwell-b300.png",
-    "/products/nvidia-gb300-nvl72.png",
-    "/products/amd-instinct-mi400.png",
-  ];
-  return fallbackImages[index % fallbackImages.length];
-}
-
-export default async function Gpu() {
-  const products = await fetchActiveProductHighlights();
-
-  // If dynamic products exist in CMS, use them; otherwise fallback to default GPUS
-  const gpuCards =
-    products.length > 0
-      ? products.map((p, idx) => ({
-          tag: p.label,
-          name: p.title,
-          body: p.description,
-          image: p.image || getProductImage(p.title, idx),
-          specs: p.highlights.map((h) => `${h.label}: ${h.value}`),
-        }))
-      : FALLBACK_GPUS;
+export default function Gpu() {
+  const gpuCards = GPUS;
 
   return (
     <>

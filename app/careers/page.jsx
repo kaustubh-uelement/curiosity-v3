@@ -5,15 +5,13 @@ import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Statement from "@/components/Statement";
 import CareerList from "./CareerList";
-import { fetchActiveCareers } from "@/lib/mainstay";
+import { CAREERS } from "@/lib/content";
 
 export const metadata = {
   title: "Careers",
   description:
     "Build the physical AI infrastructure backbone for abundant intelligence. Explore engineering and operations careers at Curiosity AI in Mumbai and Chennai.",
 };
-
-export const dynamic = "force-dynamic";
 
 const STATS = [
   { v: "Mumbai & Chennai", label: "Primary Deployment Hubs" },
@@ -22,8 +20,8 @@ const STATS = [
   { v: "Day 1 Offtake", label: "Institutional Backing" },
 ];
 
-export default async function Careers() {
-  const careers = await fetchActiveCareers();
+export default function Careers() {
+  const careers = CAREERS;
 
   return (
     <>
