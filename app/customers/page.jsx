@@ -133,7 +133,7 @@ export default async function Customers() {
       </section>
 
       {/* ============ CMS TESTIMONIALS & PERSPECTIVES ============ */}
-      {testimonials && testimonials.length > 0 && (
+      {/* {testimonials && testimonials.length > 0 && (
         <section className="sec border-t border-line">
           <Container>
             <SectionHeader
@@ -160,7 +160,7 @@ export default async function Customers() {
             </div>
           </Container>
         </section>
-      )}
+      )} */}
 
       <Statement
         title="Reserve dedicated"
